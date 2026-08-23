@@ -1,0 +1,10 @@
+.vscode
+COS214_Prac3_2026.pdf
+output.txt
+
+# build artifacts
+eventflow
+*.o
+*.d
+submission.zip
+/flag_src
