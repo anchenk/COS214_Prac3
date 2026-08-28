@@ -2,18 +2,27 @@
 
 Subject::~Subject()
 {
-    // empty
+    for (Observer *observer : attachedObservers)
+    {
+        observer->subject = nullptr;
+    }
 }
 
 void Subject::attach(Observer *observer)
 {
     if (std::find(attachedObservers.begin(), attachedObservers.end(), observer) != attachedObservers.end())
     {
-        // observer is already attached
+        // observer is already attached to this subject
         return;
+    }
+    if (observer->subject != nullptr)
+    {
+        // observer is alread attached to another subject
+        throw "Observer cannot be attached to more than one subject";
     }
 
     attachedObservers.push_back(observer);
+    observer->subject = this; // cache to later detach if observer is deleted
 }
 
 void Subject::detach(Observer *observer)
