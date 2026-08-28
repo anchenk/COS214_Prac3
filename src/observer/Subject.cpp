@@ -21,10 +21,10 @@ void Subject::detach(Observer *observer)
     attachedObservers.erase(std::remove(attachedObservers.begin(), attachedObservers.end(), observer), attachedObservers.end());
 }
 
-void Subject::notify(EventType eventType)
+void Subject::notify(Notice *notice)
 {
     for (Observer *observer : attachedObservers)
     {
-        observer->update(eventType);
+        observer->update(notice);
     }
 }
