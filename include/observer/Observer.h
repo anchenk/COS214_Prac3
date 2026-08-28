@@ -3,14 +3,14 @@
 
 #include <vector>
 
-#include "../enums/EventType.h"
+#include "Notice.h"
 
 class Observer
 {
 public:
     virtual ~Observer();
 
-    virtual void update(EventType eventType) = 0;
+    virtual void update(Notice *notice) = 0;
 };
 
 #endif

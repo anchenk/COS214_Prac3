@@ -1,7 +1,7 @@
-#ifndef EVENT_TYPE_HPP
-#define EVENT_TYPE_HPP
+#ifndef NOTICE_TYPE_HPP
+#define NOTICE_TYPE_HPP
 
-enum class EventType
+enum class NoticeType
 {
     Open,
     Close,

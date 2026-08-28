@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "../enums/EventType.h"
+#include "Notice.h"
 #include "Observer.h"
 
 class Subject
@@ -16,7 +16,7 @@ public:
 
     void attach(Observer *observer);
     void detach(Observer *observer);
-    void notify(EventType eventType);
+    void notify(Notice *notice);
 };
 
 #endif
