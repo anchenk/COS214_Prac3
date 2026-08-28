@@ -17,14 +17,14 @@ public:
     /**
      * TODO: include policy for duplicate observer registrations.
      */
-    void attach(Observer *observer);
+    virtual void attach(Observer *observer);
 
     /**
      * TODO: include policy for invalid registration detachments.
      */
-    void detach(Observer *observer);
+    virtual void detach(Observer *observer);
 
-    void notify(Notice *notice);
+    virtual void notify(Notice *notice);
 };
 
 #endif
