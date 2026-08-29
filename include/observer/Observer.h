@@ -14,14 +14,7 @@ class Subject;
  */
 class Observer
 {
-private:
-    Subject *subject;
-
 public:
-    Observer();
-    /**
-     * @brief Automatically detaches this Observer from the Subject it is attached to, if it is attached to one.
-     */
     virtual ~Observer();
 
     /**
@@ -30,11 +23,6 @@ public:
      * @param notice The event that was sent out by the Subject.
      */
     virtual void update(Notice *notice) = 0;
-
-    /**
-     * @brief Allow Subject to set this instance's "subject" field.
-     */
-    friend class Subject;
 };
 
 #endif

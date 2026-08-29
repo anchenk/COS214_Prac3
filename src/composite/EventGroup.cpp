@@ -1,8 +1,6 @@
 #include "../../include/composite/EventGroup.h"
 
-EventGroup::EventGroup(std::string name, int capacity, bool isOutdoor, std::string groupName, bool isOpen, bool isOperationZone, bool canCascade)
-{
-}
+EventGroup::EventGroup(std::string name, int capacity, bool isOutdoor, std::string groupName, bool isOpen, bool isOperationZone) {}
 
 void EventGroup::addChild(EventComponent *child)
 {

@@ -24,21 +24,19 @@ public:
      *
      * If an Observer that is already attached to this Subject is passed into this method, it is ignored.
      * Attached Observers will not be deleted when this subject is deleted.
-     * Sets Observer.subject so that the Observer can automatically detach itself from this Subject when it is deleted.
      *
      * @param observer The Observer instance that will handle the event.
      */
-    virtual void attach(Observer *observer);
+    void attach(Observer *observer);
 
     /**
-     * TODO: include policy for invalid registration detachments.
      * @brief Remove a registered event listener from handling future events.
      *
      * If an Observer that is not attached to this Subject is passed into this method, it is ignored.
      *
      * @param observera The Observer instance to detach from this Subject so that it stops handling events.
      */
-    virtual void detach(Observer *observer);
+    void detach(Observer *observer);
 
     /**
      * @brief Send an event to all attached Observers.
