@@ -1,29 +1,34 @@
 #include "../../include/composite/EventComponent.h"
 
-EventComponent::EventComponent(std::string name, int capacity, bool isOutdoor)
-{
-}
+EventComponent::EventComponent(std::string name, bool isOutdoor) : name(name), isOutdoor(isOutdoor), parent(nullptr) {}
 
 EventComponent::~EventComponent()
 {
+    if (parent != nullptr)
+        parent->detach(this);
 }
 
 std::string EventComponent::getName()
 {
-    return this->name;
+    return name;
 }
 
 bool EventComponent::getIsOutdoor()
 {
-    return this->isOutdoor;
+    return isOutdoor;
 }
 
-void EventComponent::setParent(EventComponent *parent)
+void EventComponent::setParent(EventGroup *parent)
 {
+    if (this->parent != nullptr)
+        this->parent->detach(this); // stop getting events from old parent
+    if (parent != nullptr)
+        parent->attach(this); // get events from new parent
+
     this->parent = parent;
 }
 
-EventComponent *EventComponent::getParent() const
+EventGroup *EventComponent::getParent() const
 {
-    return this->parent;
+    return parent;
 }

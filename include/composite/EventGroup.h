@@ -9,13 +9,14 @@ class EventGroup : public EventComponent,
 {
 
 private:
-	std::string groupName;
 	std::vector<EventComponent *> children;
 	bool isOpen;
 	bool isOperationZone;
 
 public:
-	EventGroup(std::string name, int capacity, bool isOutdoor, std::string groupName, bool isOpen, bool isOperationZone);
+	EventGroup(std::string name, bool isOutdoor, bool isOpen, bool isOperationZone);
+	~EventGroup();
+
 	void addChild(EventComponent *child);
 	EventComponent *removeChild(EventComponent *child);
 	EventComponent *findChild(std::string name);

@@ -5,13 +5,16 @@
 
 class EventUnit : public EventComponent
 {
+private:
+    int capacity;
+
 public:
-    EventUnit(std::string name, int capacity, bool isOutdoor);
-    virtual ~EventUnit();
+    EventUnit(std::string name, bool isOutdoor, int capacity);
+
     virtual void handleNotice(Notice *notice) = 0;
 
-    // observer
-    void update(Notice *notice) override;
+    void update(Notice *notice) override final;
+    int getCapacity() override;
 };
 
 #endif

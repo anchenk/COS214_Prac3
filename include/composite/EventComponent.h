@@ -5,19 +5,19 @@
 #include <iostream>
 #include <vector>
 #include <map>
+
 #include "../observer/Observer.h"
+#include "../composite/EventGroup.h"
 
 class EventComponent : public Observer
 {
-
 protected:
 	std::string name;
-	int capacity;
 	bool isOutdoor;
-	EventComponent *parent;
+	EventGroup *parent;
 
 public:
-	EventComponent(std::string name, int capacity, bool isOutdoor);
+	EventComponent(std::string name, bool isOutdoor);
 	virtual ~EventComponent();
 
 	virtual void open() = 0;
@@ -26,8 +26,8 @@ public:
 	virtual int getCapacity() = 0;
 	std::string getName();
 	bool getIsOutdoor();
-	virtual void setParent(EventComponent *parent);
-	EventComponent *getParent() const;
+	virtual void setParent(EventGroup *parent);
+	EventGroup *getParent() const;
 };
 
 #endif
