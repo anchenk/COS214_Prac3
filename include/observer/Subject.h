@@ -28,7 +28,7 @@ public:
      *
      * @param observer The Observer instance that will handle the event.
      */
-    void attach(Observer *observer);
+    virtual void attach(Observer *observer);
 
     /**
      * TODO: include policy for invalid registration detachments.
@@ -38,7 +38,7 @@ public:
      *
      * @param observera The Observer instance to detach from this Subject so that it stops handling events.
      */
-    void detach(Observer *observer);
+    virtual void detach(Observer *observer);
 
     /**
      * @brief Send an event to all attached Observers.
