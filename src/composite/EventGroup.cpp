@@ -52,25 +52,62 @@ void EventGroup::update(Notice *notice)
 
 void EventGroup::open()
 {
-    // TODO
+    isOpen = true;
+    // output
+    if (!children.empty())
+    {
+        // maybe output
+        for (const auto &child : children)
+        {
+            child->open();
+        }
+    }
+    else
+    {
+        // output
+    }
 }
 
 void EventGroup::close()
 {
-    // TODO
+    isOpen = false;
+    // output
+    if (!children.empty())
+    {
+        // maybe output
+        for (const auto &child : children)
+        {
+            child->close();
+        }
+    }
+    else
+    {
+        // output
+    }
 }
 
 void EventGroup::reportStatus()
 {
-    // TODO
+    // output
+    if (!children.empty())
+    {
+        for (const auto &child : children)
+        {
+            child->reportStatus();
+        }
+    }
+    else
+    {
+        // output
+    }
 }
 
 int EventGroup::getCapacity()
 {
-    int s = 0;
+    int total = 0;
 
     for (EventComponent *child : children)
-        s += child->getCapacity();
+        total += child->getCapacity();
 
-    return s;
+    return total;
 }
