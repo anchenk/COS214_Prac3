@@ -28,7 +28,6 @@ void FirstAidPoint::treatPatient(std::string condition)
     suppliesLevel -= 1;
 
     std::cout << "Treating patient with condition: " << condition << std::endl;
-    
 }
 
 void FirstAidPoint::assistEvacuation()
@@ -85,7 +84,7 @@ void FirstAidPoint::prepareForInjuries()
     std::cout << "Checking staff..." << std::endl;
     if (!currentDoctor.empty())
     {
-        std::cout << "The docter, " << currentDoctor << " is available to treat patients!" << std::endl;
+        std::cout << "The doctor, " << currentDoctor << " is available to treat patients!" << std::endl;
     }
     else
     {
@@ -190,6 +189,39 @@ void FirstAidPoint::close()
 
 void FirstAidPoint::reportStatus()
 {
+    std::cout << "Name: " << getName() << std::endl;
+    std::cout << "Capacity: " << getCapacity() << " people" << std::endl;
+    std::cout << "Is Operational: " << (isOperational ? "Yes" : "No") << std::endl;
+    std::cout << "Current Doctor: " << (currentDoctor.empty() ? "None Assigned" : currentDoctor) << std::endl;
+    std::cout << "Supplies Level: " << suppliesLevel << "%" << std::endl;
+    std::cout << "Patients Treated: " << patientsTreated << std::endl;
+    std::cout << "Is Evacuating: " << (isEvacuating ? "Yes" : "No") << std::endl;
+    std::cout << "Medical Staff Count: " << medicalStaff.size() << std::endl;
+
+    if (!medicalStaff.empty())
+    {
+        std::cout << "Medical Staff:" << std::endl;
+        for (const auto &staff : medicalStaff)
+        {
+            std::cout << "  - " << staff;
+            if (staff == currentDoctor)
+            {
+                std::cout << " Mr in charge";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    if (!activeIncidents.empty())
+    {
+        std::cout << "Active Incidents:" << std::endl;
+        for (const auto &incident : activeIncidents)
+        {
+            std::cout << "  - " << incident << std::endl;
+        }
+    }
+
+    checkSupplies();
 }
 
 int FirstAidPoint::getCapacity()
