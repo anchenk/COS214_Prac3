@@ -11,7 +11,7 @@ class Subject;
  * @brief An abstract observer in the observer design pattern.
  *
  * Handles events sent out from a Subject that this Observer is attached to.
- * 
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class Observer
 {

@@ -6,6 +6,7 @@
  *
  * Indicates the urgency and importance of a notice.
  * Used by observers to determine the appropriate response level.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 enum class Severity
 {

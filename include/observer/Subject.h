@@ -10,7 +10,7 @@
  * @brief An abstract subject in the observer design pattern.
  *
  * Provides an interface for classes to have event listeners registered to them so that the listeners can be auto notified on an event.
- * 
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class Subject
 {

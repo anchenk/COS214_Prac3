@@ -11,7 +11,7 @@
  *
  * Acts as a concrete subject in the observer design pattern.
  * Sends out events relating to a market gathering so that different components of the market can handle them and update in their own ways.
- * 
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class NotificationHub : public Subject
 {

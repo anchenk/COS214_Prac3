@@ -6,6 +6,7 @@
  *
  * Each notice type triggers different behaviors in observers.
  * Observers use switch statements on this enum to determine their reactions.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 enum class NoticeType
 {
