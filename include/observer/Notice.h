@@ -59,8 +59,16 @@ public:
      */
     Severity getSeverity() const;
 
+    /**
+     * @brief Get the place where this event is taking place.
+     *
+     * @return the EventComponent wher ethis event is happening.
+     */
     EventComponent *getLocation();
 
+    /**
+     * @brief Set the place where this event is taking place.
+     */
     void setLocation(EventComponent *location);
 
     /**
