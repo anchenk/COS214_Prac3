@@ -2,7 +2,12 @@
 #define PERFORMANCE_STAGE _H
 
 #include "EventUnit.h"
-
+/**
+ * @brief Concrete Leaf - Performance stage for live entertainment.
+ * 
+ * Represents a stage where performances are held. Reacts to weather
+ * alerts by pausing performances, schedule changes, and medical alerts.
+ */
 class PerformanceStage : public EventUnit
 {
 private:
@@ -40,7 +45,19 @@ public:
 	 */
 	void changeStageManager(std::string newManager);
 
-	// event unit
+	/**
+     * @brief Handle a received notice from the Subject.
+     * 
+     * Reacts to different notice types:
+     * - Open: Opens the stage
+     * - Close: Pauses performance and closes stage
+     * - WeatherAlert: Pauses performance
+     * - Evacuate: Pauses performance and closes
+     * - ScheduleChange: Changes stage manager (if "new_manager" detail exists)
+     * - MedicalAlert: Pauses performance
+     * 
+     * @param notice The notice to handle
+     */
 	void handleNotice(Notice *notice) override;
 	// event component
 
@@ -61,6 +78,7 @@ public:
 
 	/** 
 	 * @brief the capacity that the performance is able to take
+	 * @return the capacity value of the performance stage
 	 */
 	int getCapacity() override;
 };

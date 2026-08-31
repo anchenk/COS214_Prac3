@@ -3,6 +3,12 @@
 
 #include "EventUnit.h"
 
+/**
+ * @brief Concrete Leaf - Food preparation and tasting station.
+ * 
+ * Represents a food station in the bazaar that serves prepared food.
+ * Reacts to weather alerts, evacuation, and shift changes.
+ */
 class FoodStation : public EventUnit
 {
 private:
@@ -46,7 +52,19 @@ public:
 	 */
 	void changeChef(std::string newChef);
 
-	// event unit
+	/**
+	 *  @brief Handle a received notice from the Subject.
+	 *
+	 * Reacts to different notice types:
+	 * - Open: Opens the station
+	 * - Close: Closes the station
+	 * - WeatherAlert: Remains open
+	 * - Evacuate: Closes station
+	 * - ScheduleChange: Changes chef (if "new_chef" detail exists)
+	 * - MedicalAlert: Closes station (if serving)
+	 *
+	 * @param notice The notice to handle
+	 */
 	void handleNotice(Notice *notice) override;
 	// event component
 
@@ -60,13 +78,14 @@ public:
 	 */
 	void close() override;
 
-	/** 
-	 * @brief a general overview of the foodstation 
+	/**
+	 * @brief a general overview of the food station
 	 */
 	void reportStatus() override;
 
-	/** 
+	/**
 	 * @brief get the capacity of the food station from the base station
+	 * @return the capacity of the food station
 	 */
 	int getCapacity() override;
 };

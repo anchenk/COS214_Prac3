@@ -1,16 +1,16 @@
 #include "../../include/composite/InfomationDesk.h"
 
-InfomationDesk::InfomationDesk(std::string name, int capacity) : EventUnit(name, false, capacity), isOpen(false), visitorsHelped(0)
+InformationDesk::InformationDesk(std::string name, int capacity) : EventUnit(name, false, capacity), isOpen(false), visitorsHelped(0)
 {
 }
 
-void InfomationDesk::addStaff(std::string staffMember)
+void InformationDesk::addStaff(std::string staffMember)
 {
 	staff.push_back(staffMember);
 	std::cout << "Welcome to the team, " << staffMember << std::endl;
 }
 
-std::string InfomationDesk::addLanguage(std::string newLanguage)
+std::string InformationDesk::addLanguage(std::string newLanguage)
 {
 	for (const auto &lang : languages)
 	{
@@ -25,34 +25,65 @@ std::string InfomationDesk::addLanguage(std::string newLanguage)
 	return newLanguage;
 }
 
-bool InfomationDesk::getIsOpen()
+bool InformationDesk::getIsOpen()
 {
 	return this->isOpen;
 }
 
-int InfomationDesk::getVisitorsHelped()
+int InformationDesk::getVisitorsHelped()
 {
 	return this->visitorsHelped;
 }
 
-void InfomationDesk::handleNotice(Notice *notice)
+void InformationDesk::handleNotice(Notice *notice)
 {
+	if (!notice)
+		return;
+
+	switch (notice->getType())
+	{
+	case NoticeType::Open:
+		open();
+		break;
+	case NoticeType::Close:
+		close();
+		break;
+	case NoticeType::Evacuate:
+		std::cout << "EVERYBODY THIS WAY! " << name << " is assisting with evacuation" << std::endl;
+		close();
+		break;
+	case NoticeType::WeatherAlert:
+		std::cout << "NOBODY GO OUTSIDE! " << name << " REMAINS OPEN - providing weather safety info" << std::endl;
+		break;
+	case NoticeType::ScheduleChange:
+		if (notice->hasDetail("new_staff"))
+		{
+			addStaff(notice->getDetail("new_staff"));
+		}
+		break;
+	case NoticeType::MedicalAlert:
+		std::cout << name << " REMAINS OPEN - directing visitors away from medical incident" << std::endl;
+		break;
+	default:
+		std::cout << name << " received unknown notice: " << notice->getMessage() << std::endl;
+		break;
+	}
 }
 
 // event component
-void InfomationDesk::open()
+void InformationDesk::open()
 {
 	isOpen = true;
-	std::cout << "Need some info? Come on here, we got it all! "<< name << " is open!" << std::endl;
+	std::cout << "Need some info? Come on here, we got it all! " << name << " is open!" << std::endl;
 }
 
-void InfomationDesk::close()
+void InformationDesk::close()
 {
 	isOpen = false;
 	std::cout << "Unfortunately we have run out of information at the moment... " << name << "is closed" << std::endl;
 }
 
-void InfomationDesk::reportStatus()
+void InformationDesk::reportStatus()
 {
 	std::cout << "Name: " << getName() << std::endl;
 	std::cout << "Capacity: " << getCapacity() << std::endl;
@@ -82,7 +113,7 @@ void InfomationDesk::reportStatus()
 	std::cout << "Location: " << (getIsOutdoor() ? "Outdoor" : "Indoor") << std::endl;
 }
 
-int InfomationDesk::getCapacity()
+int InformationDesk::getCapacity()
 {
 	return EventUnit::getCapacity();
 }

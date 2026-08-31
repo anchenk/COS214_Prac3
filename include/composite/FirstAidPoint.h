@@ -3,6 +3,12 @@
 
 #include "EventUnit.h"
 
+/**
+ * @brief Concrete Leaf - First aid and medical assistance point.
+ *
+ * Represents a medical station that provides emergency care.
+ * This is a CRITICAL SERVICE that ALWAYS remains operational.
+ */
 class FirstAidPoint : public EventUnit
 {
 
@@ -67,7 +73,18 @@ public:
 	 */
 	void changeDoctor(std::string newDoctor);
 
-	// event unit
+	/**
+	 * @brief Handle a received notice from the Subject.
+	 *
+	 * CRITICAL SERVICE: ALWAYS remains operational.
+	 * Reacts to:
+	 * - Open: Opens the station
+	 * - Close: Closes if told
+	 * - WeatherAlert: REMAINS OPEN, prepares for injuries
+	 * - Evacuate: Assists evacuation, closes
+	 * - ScheduleChange: Changes doctor (if "new_doctor" detail exists)
+	 * - MedicalAlert: Dispatches team and treats patients
+	 */
 	void handleNotice(Notice *notice) override;
 	// event component
 

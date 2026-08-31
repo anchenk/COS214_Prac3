@@ -85,6 +85,41 @@ void FoodStation::changeChef(std::string newChef)
 // observer
 void FoodStation::handleNotice(Notice *notice)
 {
+    if (!notice)
+        return;
+
+    switch (notice->getType())
+    {
+    case NoticeType::Open:
+        open();
+        break;
+    case NoticeType::Close:
+        close();
+        break;
+    case NoticeType::Evacuate:
+        close();
+        std::cout << "EVERYBODY RUN! " << name << " has evacuated" << std::endl;
+        break;
+    case NoticeType::WeatherAlert:
+        std::cout << "Incoming weather! " << name << " is indoor, safe to continue operating." << std::endl;
+        break;
+    case NoticeType::ScheduleChange:
+        if (notice->hasDetail("new_chef"))
+        {
+            changeChef(notice->getDetail("new_chef"));
+        }
+        break;
+    case NoticeType::MedicalAlert:
+        if (isServing)
+        {
+            close();
+            std::cout << "No more food for now. " << name << " is closed for medical emergency" << std::endl;
+        }
+        break;
+    default:
+        std::cout << name << " received unknown notice: " << notice->getMessage() << std::endl;
+        break;
+    }
 }
 
 // event component

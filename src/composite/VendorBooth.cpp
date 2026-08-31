@@ -20,7 +20,43 @@ void VendorBooth::changeStaff(std::string newStaff)
 
 void VendorBooth::handleNotice(Notice *notice)
 {
-    // not sure how to do this at the moment
+    if (!notice)
+        return;
+
+    switch (notice->getType())
+    {
+    case NoticeType::Open:
+        open();
+        break;
+    case NoticeType::Close:
+        close();
+        break;
+    case NoticeType::Evacuate:
+        close();
+        secureGoods();
+        std::cout << "LEAVE IN A CALM ORDER! " << name << " evacuated - goods secured" << std::endl;
+        break;
+    case NoticeType::WeatherAlert:
+        std::cout << "Incoming weather! " << name << " is indoor, safe to continue operating." << std::endl;
+        break;
+    case NoticeType::ScheduleChange:
+        if (notice->hasDetail("new_staff"))
+        {
+            changeStaff(notice->getDetail("new_staff"));
+        }
+        break;
+    case NoticeType::MedicalAlert:
+        if (isOpen)
+        {
+            close();
+            secureGoods();
+            std::cout << "Everybody stay back! " << name << " closed due to medical emergency" << std::endl;
+        }
+        break;
+    default:
+        std::cout << name << " received unknown notice: " << notice->getMessage() << std::endl;
+        break;
+    }
 }
 
 // event component
