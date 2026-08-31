@@ -5,9 +5,11 @@
 
 /**
  * @brief Concrete Leaf - Vender booth for selling crafts.
+ * 
  * Represents an individual vendor booth in the artisanal bazaar.
  * Reacts to various event notices including weather alerts, evacuation,
  * and shift changes.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class VendorBooth : public EventUnit
 {

@@ -10,6 +10,7 @@
 
 /**
  * @brief An event that is sent out to event listeners, and contains all necessary details for conditionally handling the event.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class Notice
 {

@@ -8,6 +8,7 @@
  *
  * Represents a medical station that provides emergency care.
  * This is a CRITICAL SERVICE that ALWAYS remains operational.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class FirstAidPoint : public EventUnit
 {

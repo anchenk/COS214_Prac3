@@ -8,6 +8,7 @@
  * 
  * Represents an information desk that helps visitors navigate the bazaar.
  * This is a CRITICAL SERVICE that remains OPEN during most alerts.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class InformationDesk : public EventUnit
 {

@@ -21,6 +21,7 @@
  * @note This class is abstract and cannot be instantiated directly.
  * @note Implements the Component role in the Composite pattern.
  * @note Implements the Observer role in the Observer pattern.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 
 class EventComponent : public Observer

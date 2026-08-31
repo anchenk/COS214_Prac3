@@ -8,6 +8,7 @@
  *
  * Base class for all concrete leaf components.
  * Implements the Observer interface to receive notifications.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class EventUnit : public EventComponent
 {

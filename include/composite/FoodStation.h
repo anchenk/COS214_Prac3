@@ -8,6 +8,7 @@
  * 
  * Represents a food station in the bazaar that serves prepared food.
  * Reacts to weather alerts, evacuation, and shift changes.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class FoodStation : public EventUnit
 {

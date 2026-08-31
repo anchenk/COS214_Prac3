@@ -17,6 +17,8 @@
  * @note Implements the Composite role in the Composite pattern.
  * @note Implements the Concrete Subject role in the Observer pattern.
  * @note Does NOT implement Observer directly - receives via EventComponent inheritance.
+ * 
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 
 class EventGroup : public EventComponent,

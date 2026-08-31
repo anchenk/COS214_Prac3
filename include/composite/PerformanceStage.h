@@ -7,6 +7,7 @@
  * 
  * Represents a stage where performances are held. Reacts to weather
  * alerts by pausing performances, schedule changes, and medical alerts.
+ * @author Caleb Jennings - u25173805, Anchen Kruger - u25073703, Chloe Larsen - u25004141
  */
 class PerformanceStage : public EventUnit
 {
