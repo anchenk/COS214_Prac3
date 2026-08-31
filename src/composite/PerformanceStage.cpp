@@ -68,6 +68,62 @@ void PerformanceStage::changeStageManager(std::string newManager)
 // observer
 void PerformanceStage::handleNotice(Notice *notice)
 {
+    if (!notice)
+        return;
+
+    switch (notice->getType())
+    {
+    case NoticeType::Open:
+        open();
+        break;
+    case NoticeType::Close:
+        if (isPerforming)
+        {
+            pausePerformance();
+        }
+        close();
+        break;
+    case NoticeType::Evacuate:
+        if (isPerforming)
+        {
+            pausePerformance();
+        }
+        close();
+        std::cout << "FIRE! FIRE! I mean everybody please evacuate in an orderly fashion." << name << " has evacuated - performance stopped" << std::endl;
+        break;
+    case NoticeType::WeatherAlert:
+        std::cout << "Incoming weather! ";
+        if (isPerforming)
+        {
+            pausePerformance();
+            std::cout << name << " performance paused due to weather" << std::endl;
+        }
+        else
+        {
+            std::cout << name << " (outdoor) no performance to pause" << std::endl;
+        }
+        break;
+    case NoticeType::ScheduleChange:
+        if (notice->hasDetail("new_manager"))
+        {
+            changeStageManager(notice->getDetail("new_manager"));
+        }
+        break;
+    case NoticeType::MedicalAlert:
+        if (isPerforming)
+        {
+            pausePerformance();
+            std::cout << "STOP! " << name << " performance paused for medical emergency" << std::endl;
+        }
+        else
+        {
+            std::cout << "Oh no! Medical Emergency! " << name << " has no performance to pause" << std::endl;
+        }
+        break;
+    default:
+        std::cout << name << " received unknown notice: " << notice->getMessage() << std::endl;
+        break;
+    }
 }
 
 // event component

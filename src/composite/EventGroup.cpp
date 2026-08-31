@@ -1,4 +1,5 @@
 #include "../../include/composite/EventGroup.h"
+#include <algorithm>
 
 EventGroup::EventGroup(std::string name, bool isOutdoor, bool isOpen, bool isOperationZone) : EventComponent(name, isOutdoor), isOpen(isOpen), isOperationZone(isOperationZone) {}
 

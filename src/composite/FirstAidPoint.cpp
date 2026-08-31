@@ -34,7 +34,7 @@ void FirstAidPoint::assistEvacuation()
 {
     if (isEvacuating)
     {
-        std::cout << "WE ARE ALREADY EVACUATION, COME ON!!" << std::endl;
+        std::cout << "WE ARE ALREADY EVACUATING, COME ON!!" << std::endl;
         return;
     }
 
@@ -172,6 +172,56 @@ void FirstAidPoint::changeDoctor(std::string newDoctor)
 // observer
 void FirstAidPoint::handleNotice(Notice *notice)
 {
+    if (!notice)
+        return;
+
+    switch (notice->getType())
+    {
+    case NoticeType::Open:
+        open();
+        break;
+    case NoticeType::Close:
+        close();
+        break;
+    case NoticeType::Evacuate:
+        assistEvacuation();
+        close();
+        break;
+    case NoticeType::WeatherAlert:
+        prepareForInjuries();
+        std::cout << name << " is preparing for weather-related injuries" << std::endl;
+        break;
+    case NoticeType::ScheduleChange:
+        if (notice->hasDetail("new_doctor"))
+        {
+            changeDoctor(notice->getDetail("new_doctor"));
+        }
+        break;
+    case NoticeType::MedicalAlert:
+    {
+        std::string condition = notice->hasDetail("condition") ? notice->getDetail("condition") : "Unknown condition";
+        std::string location = notice->hasDetail("location") ? notice->getDetail("location") : "Unknown location";
+
+        std::cout << "" << name << " is responding to medical emergency!" << std::endl;
+        std::cout << "    Condition: " << condition << std::endl;
+        std::cout << "    Location: " << location << std::endl;
+
+        if (location != "Unknown location")
+        {
+            dispatchTeam(location);
+        }
+        if (condition != "Unknown condition")
+        {
+            treatPatient(condition);
+        }
+
+        checkSupplies();
+        break;
+    }
+    default:
+        std::cout << name << " received unknown notice: " << notice->getMessage() << std::endl;
+        break;
+    }
 }
 
 // event component
