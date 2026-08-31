@@ -22,19 +22,72 @@
 
 ## Team Members
 
+| Name | Student Number |
 | **Anchen Kruger** | [25073703#] | 
 | **Caleb Jennings** | [Student#] | 
 | **Chloe Larsen** | [Student#] | 
 
 ---
 
-## Building with Make
+## Main settings changed within DoxygenFile
 
-### Prerequisites
-- **C++ Compiler**: g++ 7.0+ or clang 10.0+
-- **Make**: GNU Make 3.81+
-- **Doxygen**: For documentation generation (optional)
-- **Graphviz**: For diagrams (optional)
+```bash
+PROJECT_NAME           = "COS214 Event Management System"
+OUTPUT_DIRECTORY       = ./docs
+INPUT                  = ./include ./src
+RECURSIVE              = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+GENERATE_HTML          = YES
+GENERATE_TREEVIEW      = YES
+SOURCE_BROWSER         = YES
+HAVE_DOT               = YES  # Requires Graphviz
+
+```
+
+### How to use it:
+
+```bash
+
+# Or manually
+doxygen Doxyfile
+
+# View documentation
+make view-docs
+
+# Or manually open in browser
+# Windows: start docs/html/index.html
+# Mac: open docs/html/index.html
+# Linux: firefox docs/html/index.html
+
+```
+
+### Formalities on the documentation: 
+
+```bash
+
+/**
+ * @brief Brief description
+ * @param param_name Description
+ * @return Description of return value
+ */
+void methodName(int param_name);
+
+/**
+ * @class ClassName
+ * @brief Brief class description
+ * 
+ * Detailed class description.
+ */
+class ClassName {
+    int member; ///< Member description
+};
+
+```
+
+---
+
+## Building with Make
 
 ### Build Instructions
 
@@ -58,13 +111,4 @@ make docs
 # View documentation
 make view-docs
 
-# Or manually
-doxygen Doxyfile
-
-# View documentation
-make view-docs
-
-# Or manually open in browser
-# Windows: start docs/html/index.html
-# Mac: open docs/html/index.html
-# Linux: firefox docs/html/index.html
+```
