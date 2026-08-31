@@ -47,12 +47,12 @@ void VendorBooth::handleNotice(Notice *notice)
         close();
         break;
     case NoticeType::Evacuate:
+        std::cout << "LEAVE IN A CALM ORDER! " << name << " evacuated - goods secured" << std::endl;
         close();
         secureGoods();
-        std::cout << "LEAVE IN A CALM ORDER! " << name << " evacuated - goods secured" << std::endl;
         break;
     case NoticeType::WeatherAlert:
-        std::cout << "Incoming weather! " << name << " is indoor, safe to continue operating." << std::endl;
+        std::cout << "Incoming weather! " << name << " is indoors, safe to continue operating." << std::endl;
         break;
     case NoticeType::ScheduleChange:
         if (notice->hasDetail("new_staff"))
@@ -63,9 +63,9 @@ void VendorBooth::handleNotice(Notice *notice)
     case NoticeType::MedicalAlert:
         if (isOpen)
         {
+            std::cout << "Everybody stay back! " << name << " closed due to medical emergency" << std::endl;
             close();
             secureGoods();
-            std::cout << "Everybody stay back! " << name << " closed due to medical emergency" << std::endl;
         }
         break;
     default:
@@ -78,13 +78,13 @@ void VendorBooth::handleNotice(Notice *notice)
 void VendorBooth::open()
 {
     isOpen = true;
-    std::cout << "The booth is officially opened!! Welcome one and all, make sure to bring a friend along" << std::endl;
+    std::cout << "The " << name << " booth is officially opened!! Welcome one and all, make sure to bring a friend along" << std::endl;
 }
 
 void VendorBooth::close()
 {
     isOpen = false;
-    std::cout << "Oh no! The booth is closed... come back next time!" << std::endl;
+    std::cout << "Oh no! The " << name << " booth is closed... come back next time!" << std::endl;
 }
 
 void VendorBooth::reportStatus()

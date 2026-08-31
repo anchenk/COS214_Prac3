@@ -61,7 +61,12 @@ void PerformanceStage::changeStageManager(std::string newManager)
         return;
     }
 
-    std::cout << "Bye bye, " << currentStageManager << " helloooo " << newManager << std::endl;
+    if (currentStageManager != "")
+    {
+        std::cout << "Bye bye, " << currentStageManager << ". ";
+    }
+
+    std::cout << "Helloooo " << newManager << std::endl;
     currentStageManager = newManager;
 }
 
@@ -99,19 +104,19 @@ void PerformanceStage::handleNotice(Notice *notice)
         close();
         break;
     case NoticeType::Evacuate:
+        std::cout << "FIRE! FIRE! I mean everybody please evacuate in an orderly fashion." << name << " has evacuated - performance stopped" << std::endl;
         if (isPerforming)
         {
             pausePerformance();
         }
         close();
-        std::cout << "FIRE! FIRE! I mean everybody please evacuate in an orderly fashion." << name << " has evacuated - performance stopped" << std::endl;
         break;
     case NoticeType::WeatherAlert:
         std::cout << "Incoming weather! ";
         if (isPerforming)
         {
-            pausePerformance();
             std::cout << name << " performance paused due to weather" << std::endl;
+            pausePerformance();
         }
         else
         {
@@ -127,8 +132,8 @@ void PerformanceStage::handleNotice(Notice *notice)
     case NoticeType::MedicalAlert:
         if (isPerforming)
         {
-            pausePerformance();
             std::cout << "STOP! " << name << " performance paused for medical emergency" << std::endl;
+            pausePerformance();
         }
         else
         {

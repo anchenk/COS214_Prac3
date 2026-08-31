@@ -50,25 +50,24 @@ std::vector<EventComponent *> EventGroup::getChildren()
 void EventGroup::update(Notice *notice)
 {
     notify(notice); // forward event to children
+    std::cout << "-----------------\n"  << name << "'s children have been notified\n"<< std::endl;
 }
 
 void EventGroup::open()
 {
-    isOpen = true;
-    // output
-    std::cout << "We are officially open" << std::endl;
+    isOpen = true;    
+    std::cout << "\nThe " << name << " is open for business!" << std::endl;
     if (!children.empty())
-    {
-        // maybe output
-        std::cout << "Opening all the different facilities..." << std::endl;
+    {        
+        std::cout << "\tOpening all the different facilities..." << std::endl;
         for (const auto &child : children)
-        {
+        {   
+            std::cout << "\t\t";
             child->open();
         }
     }
     else
-    {
-        // output
+    {        
         std::cout << "Ohhhh... it looks like there are no facilities..." << std::endl;
     }
 }

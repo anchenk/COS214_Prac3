@@ -71,9 +71,9 @@ void InformationDesk::handleNotice(Notice *notice)
 		std::cout << "NOBODY GO OUTSIDE! " << name << " REMAINS OPEN - providing weather safety info" << std::endl;
 		break;
 	case NoticeType::ScheduleChange:
-		if (notice->hasDetail("new_staff"))
+		if (notice->hasDetail("new_desk_staff"))
 		{
-			addStaff(notice->getDetail("new_staff"));
+			addStaff(notice->getDetail("new_desk_staff"));
 		}
 		break;
 	case NoticeType::MedicalAlert:

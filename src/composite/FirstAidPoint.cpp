@@ -1,5 +1,5 @@
 #include "../../include/composite/FirstAidPoint.h"
-#include "../../include/composite/EventGroup.h" 
+#include "../../include/composite/EventGroup.h"
 
 FirstAidPoint::FirstAidPoint(std::string name, int capacity) : EventUnit(name, true, capacity), suppliesLevel(0), isOperational(false), patientsTreated(0), isEvacuating(false)
 {
@@ -219,8 +219,8 @@ void FirstAidPoint::handleNotice(Notice *notice)
         close();
         break;
     case NoticeType::WeatherAlert:
-        prepareForInjuries();
         std::cout << name << " is preparing for weather-related injuries" << std::endl;
+        prepareForInjuries();
         break;
     case NoticeType::ScheduleChange:
         if (notice->hasDetail("new_doctor"))
