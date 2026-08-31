@@ -155,7 +155,7 @@ public:
      * @param severity The urgency/severity level of the medical event.
      * @return a Notice configured with NoticeType::MedicalAlert.
      */
-    static Notice medicalAlert(const std::string &condition, const std::string &location, Severity severity);
+    static Notice medicalAlert(const std::string &condition, EventComponent *location, Severity severity);
 };
 
 #endif

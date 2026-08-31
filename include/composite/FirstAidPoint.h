@@ -63,9 +63,9 @@ public:
 	/**
 	 * @brief to ensure there is a team available for a certain active incident occuring
 	 *
-	 * @param location where the incident is occuring
+	 * @param location the location where the incident is occuring
 	 */
-	void dispatchTeam(std::string location);
+	void dispatchTeam(EventComponent *location);
 
 	/**
 	 * @brief to change the current doctor that is working
