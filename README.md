@@ -2,15 +2,15 @@
 
 ## Event Concept
 
-**COS214 Summer Music Festival** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
+**COS214 Lentedag** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
 
 ### Key Features
-- 🎭 **Composite Pattern**: Hierarchical organization of event components
-- 📊 **Capacity Management**: Track and manage venue capacities
-- 🌦️ **Weather Response**: Automated responses to weather warnings
-- 🚑 **Emergency Handling**: Medical and evacuation coordination
-- 🏗️ **Flexible Architecture**: Add/remove components dynamically
-- 📝 **Observer Pattern**: Event notifications and responses
+- **Composite Pattern**: Hierarchical organization of event components
+- **Capacity Management**: Track and manage venue capacities
+- **Weather Response**: Automated responses to weather warnings
+- **Emergency Handling**: Medical and evacuation coordination
+- **Flexible Architecture**: Add/remove components dynamically
+- **Observer Pattern**: Event notifications and responses
 
 ### Components
 | Component Type | Description | Examples |
@@ -23,6 +23,7 @@
 ## Team Members
 
 | Name | Student Number |
+|------|---------------|
 | **Anchen Kruger** | [25073703#] | 
 | **Caleb Jennings** | [Student#] | 
 | **Chloe Larsen** | [Student#] | 
@@ -88,8 +89,6 @@ class ClassName {
 ---
 
 ## Building with Make
-
-### Build Instructions
 
 ```bash
 
