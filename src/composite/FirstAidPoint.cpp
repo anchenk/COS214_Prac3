@@ -124,8 +124,10 @@ void FirstAidPoint::restockSupplies(int amount)
     }
 }
 
-void FirstAidPoint::dispatchTeam(std::string location)
+void FirstAidPoint::dispatchTeam(EventComponent *location)
 {
+    std::string locationName = location->getName();
+
     if (!isOperational)
     {
         std::cout << "First aid point is not operational..." << std::endl;
@@ -138,10 +140,23 @@ void FirstAidPoint::dispatchTeam(std::string location)
         return;
     }
 
-    activeIncidents.push_back(location);
+    activeIncidents.push_back(locationName);
 
     std::cout << "Active incident occuring!!" << std::endl;
-    std::cout << "Location: " << location << std::endl;
+    std::cout << "Location: " << locationName << std::endl;
+
+    // attempt to relocate this first aid team:
+    // if location is a group, move to that group, otherwise if a unit, move to unit's parent if it has a parent
+    if (EventGroup *v = dynamic_cast<EventGroup *>(location))
+    {
+        setParent(v);
+    }
+    else if (EventUnit *v = dynamic_cast<EventUnit *>(location))
+    {
+        EventGroup *vp = v->getParent();
+        if (vp != nullptr)
+            setParent(vp);
+    }
 }
 
 void FirstAidPoint::changeDoctor(std::string newDoctor)
@@ -214,21 +229,22 @@ void FirstAidPoint::handleNotice(Notice *notice)
         break;
     case NoticeType::MedicalAlert:
     {
+        EventComponent *location = notice->getLocation();
+
+        if (location == nullptr)
+            throw "MedicalAlert Notice missing location!";
+
         std::string condition = notice->hasDetail("condition") ? notice->getDetail("condition") : "Unknown condition";
-        std::string location = notice->hasDetail("location") ? notice->getDetail("location") : "Unknown location";
+        std::string locationName = location->getName();
 
         std::cout << "" << name << " is responding to medical emergency!" << std::endl;
         std::cout << "    Condition: " << condition << std::endl;
-        std::cout << "    Location: " << location << std::endl;
+        std::cout << "    Location: " << locationName << std::endl;
 
-        if (location != "Unknown location")
-        {
-            dispatchTeam(location);
-        }
+        dispatchTeam(location);
+
         if (condition != "Unknown condition")
-        {
             treatPatient(condition);
-        }
 
         checkSupplies();
         break;

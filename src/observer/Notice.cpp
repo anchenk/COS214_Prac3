@@ -1,7 +1,7 @@
 #include "../../include/observer/Notice.h"
 
 Notice::Notice(NoticeType type, std::string message)
-    : type(type), message(std::move(message)), severity(Severity::Info) {}
+    : type(type), message(std::move(message)), severity(Severity::Info), location(nullptr) {}
 
 NoticeType Notice::getType() const
 {
@@ -16,6 +16,16 @@ std::string Notice::getMessage() const
 Severity Notice::getSeverity() const
 {
     return severity;
+}
+
+EventComponent *Notice::getLocation()
+{
+    return location;
+}
+
+void Notice::setLocation(EventComponent *location)
+{
+    this->location = location;
 }
 
 std::string Notice::getDetail(const std::string &key) const
@@ -103,12 +113,12 @@ Notice Notice::shiftChange()
     return notice;
 }
 
-Notice Notice::medicalAlert(const std::string &condition, const std::string &location, Severity severity)
+Notice Notice::medicalAlert(const std::string &condition, EventComponent *location, Severity severity)
 {
-    std::string msg = "Medical alert (" + condition + ") at " + location;
+    std::string msg = "Medical alert (" + condition + ") at " + location->getName();
     Notice notice(NoticeType::MedicalAlert, msg);
+    notice.setLocation(location);
     notice.addDetail("condition", condition);
-    notice.addDetail("location", location);
     notice.setSeverity(severity);
     return notice;
 }
