@@ -71,13 +71,13 @@ public:
 	void handleNotice(Notice *notice) override;
 	// event component
 
-	/** 
+	/**
 	 * @brief open up the first aid station for function
 	 */
 	void open() override;
 
 	/**
-	 * @brief close the first aid station for function 
+	 * @brief close the first aid station for function
 	 */
 	void close() override;
 
