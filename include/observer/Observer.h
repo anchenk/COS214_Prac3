@@ -11,10 +11,16 @@ class Subject;
  * @brief An abstract observer in the observer design pattern.
  *
  * Handles events sent out from a Subject that this Observer is attached to.
+ * 
  */
 class Observer
 {
 public:
+    /**
+     * @brief Virtual destructor.
+     *
+     * Required for polymorphic destruction of derived classes.
+     */
     virtual ~Observer();
 
     /**

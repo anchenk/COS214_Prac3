@@ -11,6 +11,7 @@
  *
  * Acts as a concrete subject in the observer design pattern.
  * Sends out events relating to a market gathering so that different components of the market can handle them and update in their own ways.
+ * 
  */
 class NotificationHub : public Subject
 {
@@ -18,7 +19,18 @@ private:
     Notice *lastNotice;
 
 public:
+    /**
+     * @brief Construct a new Notification Hub object.
+     *
+     * Initializes with no cached notice.
+     */
     NotificationHub();
+
+    /**
+     * @brief Destroy the Notification Hub object.
+     *
+     * Deletes the cached lastNotice if it exists.
+     */
     ~NotificationHub();
 
     /**
