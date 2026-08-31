@@ -22,10 +22,11 @@ void EventGroup::addChild(EventComponent *child)
 EventComponent *EventGroup::removeChild(EventComponent *child)
 {
     if (child->getParent() != this)
-        return;
+        return child;
 
     child->setParent(nullptr);
     children.erase(std::remove(children.begin(), children.end(), child), children.end());
+    return child;
 }
 
 EventComponent *EventGroup::findChild(std::string name)

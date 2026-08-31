@@ -1,5 +1,5 @@
-#ifndef PERFORMANCE_STAGE _H
-#define PERFORMANCE_STAGE _H
+#ifndef PERFORMANCE_STAGE_H
+#define PERFORMANCE_STAGE_H
 
 #include "EventUnit.h"
 /**

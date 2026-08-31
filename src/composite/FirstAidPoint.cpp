@@ -1,4 +1,5 @@
 #include "../../include/composite/FirstAidPoint.h"
+#include "../../include/composite/EventGroup.h" 
 
 FirstAidPoint::FirstAidPoint(std::string name, int capacity) : EventUnit(name, true, capacity), suppliesLevel(0), isOperational(false), patientsTreated(0), isEvacuating(false)
 {

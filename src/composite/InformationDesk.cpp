@@ -1,4 +1,4 @@
-#include "../../include/composite/InfomationDesk.h"
+#include "../../include/composite/InformationDesk.h"
 
 InformationDesk::InformationDesk(std::string name, int capacity) : EventUnit(name, false, capacity), isOpen(false), visitorsHelped(0)
 {

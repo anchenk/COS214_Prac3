@@ -1,5 +1,5 @@
-#ifndef FOOD_STATION _H
-#define FOOD_STATION _H
+#ifndef FOOD_STATION_H
+#define FOOD_STATION_H
 
 #include "EventUnit.h"
 
