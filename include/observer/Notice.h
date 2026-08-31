@@ -7,6 +7,7 @@
 
 #include "../enums/Severity.h"
 #include "../enums/NoticeType.h"
+#include "../composite/EventComponent.h"
 
 /**
  * @brief An event that is sent out to event listeners, and contains all necessary details for conditionally handling the event.
@@ -19,6 +20,12 @@ private:
     std::string message;
     Severity severity;
     NoticeType type;
+    /**
+     * @brief The location where the event is happening, if applicable.
+     *
+     * Can be null.
+     */
+    EventComponent *location;
 
 public:
     /**
@@ -51,6 +58,10 @@ public:
      * @return the severity of this Notice.
      */
     Severity getSeverity() const;
+
+    EventComponent *getLocation();
+
+    void setLocation(EventComponent *location);
 
     /**
      * @brief Get a particular detail set in this Notice.
