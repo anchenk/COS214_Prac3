@@ -7,7 +7,7 @@
 #include "Observer.h"
 
 /**
- * @bief An abstract subject in the observer design pattern.
+ * @brief An abstract subject in the observer design pattern.
  *
  * Provides an interface for classes to have event listeners registered to them so that the listeners can be auto notified on an event.
  */

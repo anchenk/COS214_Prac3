@@ -1,4 +1,5 @@
 #include "../../include/observer/Subject.h"
+#include <algorithm>
 
 Subject::~Subject()
 {
