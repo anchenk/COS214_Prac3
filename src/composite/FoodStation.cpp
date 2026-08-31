@@ -112,11 +112,11 @@ void FoodStation::handleNotice(Notice *notice)
         close();
         break;
     case NoticeType::Evacuate:
-        close();
         std::cout << "EVERYBODY RUN! " << name << " has evacuated" << std::endl;
+        close();
         break;
     case NoticeType::WeatherAlert:
-        std::cout << "Incoming weather! " << name << " is indoor, safe to continue operating." << std::endl;
+        std::cout << "Incoming weather! " << name << " is indoors, safe to continue operating." << std::endl;
         break;
     case NoticeType::ScheduleChange:
         if (notice->hasDetail("new_chef"))
@@ -126,9 +126,9 @@ void FoodStation::handleNotice(Notice *notice)
         break;
     case NoticeType::MedicalAlert:
         if (isServing)
-        {
-            close();
+        {            
             std::cout << "No more food for now. " << name << " is closed for medical emergency" << std::endl;
+            close();
         }
         break;
     default:
@@ -141,13 +141,13 @@ void FoodStation::handleNotice(Notice *notice)
 void FoodStation::open()
 {
     isServing = true;
-    std::cout << name << " is now open and serving delicious " << cuisineType << std::endl;
+    std::cout << name << " is now open and serving delicious " << cuisineType << " food" << std::endl;
 }
 
 void FoodStation::close()
 {
     isServing = false;
-    std::cout << name << " whomp whomp is now closed... " << cuisineType << std::endl;
+    std::cout << "Whomp whomp " << name << " is now closed... " << std::endl;
 }
 
 void FoodStation::reportStatus()

@@ -1,4 +1,5 @@
 #include "../../include/composite/EventComponent.h"
+#include "../../include/composite/EventGroup.h"
 
 EventComponent::EventComponent(std::string name, bool isOutdoor) : name(name), isOutdoor(isOutdoor), parent(nullptr) {}
 

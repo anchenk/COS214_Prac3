@@ -4,10 +4,7 @@ NotificationHub::NotificationHub() : lastNotice(nullptr) {}
 
 NotificationHub::~NotificationHub()
 {
-    if (lastNotice != nullptr)
-    {
-        delete lastNotice;
-    }
+    lastNotice = nullptr;
 }
 
 void NotificationHub::broadcastToAll(Notice *notice)

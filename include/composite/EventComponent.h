@@ -7,7 +7,7 @@
 #include <map>
 
 #include "../observer/Observer.h"
-#include "../composite/EventGroup.h"
+class EventGroup;
 
 /**
  * @brief Abstract Component participant in the Composite pattern.

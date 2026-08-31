@@ -1,4 +1,5 @@
 #include "../../include/observer/Notice.h"
+#include "../../include/composite/EventComponent.h" 
 
 Notice::Notice(NoticeType type, std::string message)
     : type(type), message(std::move(message)), severity(Severity::Info), location(nullptr) {}

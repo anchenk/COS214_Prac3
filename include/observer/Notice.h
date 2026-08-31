@@ -7,7 +7,8 @@
 
 #include "../enums/Severity.h"
 #include "../enums/NoticeType.h"
-#include "../composite/EventComponent.h"
+
+class EventComponent;
 
 /**
  * @brief An event that is sent out to event listeners, and contains all necessary details for conditionally handling the event.

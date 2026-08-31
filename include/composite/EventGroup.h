@@ -78,9 +78,7 @@ public:
 	 * @param name The name of the child to find
 	 * @return EventComponent* Pointer to the found component, or nullptr if not found
 	 */
-	EventComponent *findChild(std::string name);
-
-	EventComponent *findChild(std::string name);
+	EventComponent *findChild(std::string name);	
 
 	/**
 	 * @brief Get all children of this group.

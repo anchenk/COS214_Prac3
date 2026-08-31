@@ -6,10 +6,10 @@ ZIP_NAME := submission.zip
 FLAT_DIR := flat_src
 
 # Find main.cpp and all src/ cpp files
-SRCS     := main.cpp $(shell find src -type f -name '*.cpp')
+SRCS     := $(shell find src -type f -name '*.cpp')
 
 # Map main.cpp -> build/main.o and src/path/file.cpp -> build/src/path/file.o
-OBJS     := $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+OBJS     := $(patsubst src/%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 all: $(TARGET)
 	./$(TARGET)
@@ -19,9 +19,12 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Compile each .cpp into a .o file inside build/
-$(BUILD_DIR)/%.o: %.cpp
+$(BUILD_DIR)/%.o: src/%.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+run: $(TARGET)
+	./$(TARGET)
 
 # Zip Makefile, main.cpp, src/, include/, and flatten all files from resources into the root of the zip
 zip:
