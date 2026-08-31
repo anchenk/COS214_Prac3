@@ -22,6 +22,8 @@
 
 ## Team Members
 
+| Name | Student Number |
+|------|---------------|
 | **Anchen Kruger** | [25073703#] | 
 | **Caleb Jennings** | [Student#] | 
 | **Chloe Larsen** | [Student#] | 
