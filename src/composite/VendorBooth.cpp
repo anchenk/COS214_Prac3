@@ -23,6 +23,21 @@ void VendorBooth::handleNotice(Notice *notice)
     if (!notice)
         return;
 
+    // switch severity
+    switch (notice->getSeverity())
+    {
+    case Severity::Info:
+        std::cout << "Informational message: ";
+        break;
+    case Severity::Warning:
+        std::cout << "Warning message: ";
+        break;
+    case Severity::Critical:
+        std::cout << "Critical Message: ";
+        break;
+    }
+
+    // switch type
     switch (notice->getType())
     {
     case NoticeType::Open:
