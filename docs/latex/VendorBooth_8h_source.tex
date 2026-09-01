@@ -1,0 +1,38 @@
+\doxysection{Vendor\+Booth.\+h}
+\hypertarget{VendorBooth_8h_source}{}\label{VendorBooth_8h_source}\index{include/composite/VendorBooth.h@{include/composite/VendorBooth.h}}
+\mbox{\hyperlink{VendorBooth_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ VENDOR\_BOOTH\_H}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ VENDOR\_BOOTH\_H}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventUnit_8h}{EventUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00014}\mbox{\hyperlink{classVendorBooth}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVendorBooth}{VendorBooth}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEventUnit}{EventUnit}}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00016}00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00017}\mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{00017}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{craftType}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00018}\mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{00018}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{isOpen}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00019}\mbox{\hyperlink{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}{00019}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}{isSecured}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00020}\mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{00020}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00022}00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classVendorBooth}{VendorBooth}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}},\ std::string\ \mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{craftType}});}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{secureGoods}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}{changeStaff}}(std::string\ newStaff);}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_ab811f9460f56751ba22508272cb3daf0}{handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{close}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}{reportStatus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{getCapacity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00079}00079\ \};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8h_source_l00081}00081\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

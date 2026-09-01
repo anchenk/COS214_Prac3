@@ -1,0 +1,114 @@
+\doxysection{src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Demonstration program for The Heap \& Heap Artisanal Bazaar.  
+
+
+{\ttfamily \#include "{}../include/composite/\+Event\+Group.\+h"{}}\newline
+{\ttfamily \#include "{}../include/composite/\+Vendor\+Booth.\+h"{}}\newline
+{\ttfamily \#include "{}../include/composite/\+Performance\+Stage.\+h"{}}\newline
+{\ttfamily \#include "{}../include/composite/\+Food\+Station.\+h"{}}\newline
+{\ttfamily \#include "{}../include/composite/\+Information\+Desk.\+h"{}}\newline
+{\ttfamily \#include "{}../include/composite/\+First\+Aid\+Point.\+h"{}}\newline
+{\ttfamily \#include "{}../include/observer/\+Notification\+Hub.\+h"{}}\newline
+{\ttfamily \#include "{}../include/observer/\+Notice.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_aafef166e63c5fa1d112d41035a81493f}{print\+Separator}} (const std\+::string \&title="{}"{})
+\begin{DoxyCompactList}\small\item\em Print a separator line for visual clarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ae8fa6fc69497d85bcf25571f2f80f353}{wait\+For\+User}} ()
+\begin{DoxyCompactList}\small\item\em Wait for user input to continue the demonstration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a0fb23245f06f731e5a3ee2465feb2976}{testing}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_ac474183ee901f1980a9963e75699b6a1}{demo}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Demonstration program for The Heap \& Heap Artisanal Bazaar. 
+
+This program demonstrates\+:
+\begin{DoxyItemize}
+\item Composite pattern\+: Building an event tree with multiple levels
+\item \doxylink{classObserver}{Observer} pattern\+: Broadcasting notices and cascading notifications
+\item Original features\+: Shift changes, medical alerts, multi-\/language support
+\item Runtime reorganisation\+: Transferring vendors between areas
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ac474183ee901f1980a9963e75699b6a1}\label{main_8cpp_ac474183ee901f1980a9963e75699b6a1} 
+\index{main.cpp@{main.cpp}!demo@{demo}}
+\index{demo@{demo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{demo()}{demo()}}
+{\footnotesize\ttfamily void demo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00187}{187}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00337}{337}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_aafef166e63c5fa1d112d41035a81493f}\label{main_8cpp_aafef166e63c5fa1d112d41035a81493f} 
+\index{main.cpp@{main.cpp}!printSeparator@{printSeparator}}
+\index{printSeparator@{printSeparator}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{printSeparator()}{printSeparator()}}
+{\footnotesize\ttfamily void print\+Separator (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Print a separator line for visual clarity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Optional title to display in the separator \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a0fb23245f06f731e5a3ee2465feb2976}\label{main_8cpp_a0fb23245f06f731e5a3ee2465feb2976} 
+\index{main.cpp@{main.cpp}!testing@{testing}}
+\index{testing@{testing}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{testing()}{testing()}}
+{\footnotesize\ttfamily void testing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae8fa6fc69497d85bcf25571f2f80f353}\label{main_8cpp_ae8fa6fc69497d85bcf25571f2f80f353} 
+\index{main.cpp@{main.cpp}!waitForUser@{waitForUser}}
+\index{waitForUser@{waitForUser}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{waitForUser()}{waitForUser()}}
+{\footnotesize\ttfamily void wait\+For\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait for user input to continue the demonstration. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

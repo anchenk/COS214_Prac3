@@ -1,0 +1,313 @@
+\doxysection{Vendor\+Booth Class Reference}
+\hypertarget{classVendorBooth}{}\label{classVendorBooth}\index{VendorBooth@{VendorBooth}}
+
+
+Concrete Leaf -\/ Vender booth for selling crafts.  
+
+
+
+
+{\ttfamily \#include $<$Vendor\+Booth.\+h$>$}
+
+Inheritance diagram for Vendor\+Booth\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classVendorBooth}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVendorBooth_a59fd79a846b14b3281031d8da95060bc}{Vendor\+Booth}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}}, std\+::string \mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{craft\+Type}})
+\begin{DoxyCompactList}\small\item\em Create a new Venderbooth object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{secure\+Goods}} ()
+\begin{DoxyCompactList}\small\item\em Changes the is\+Secure status of the booth. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}{change\+Staff}} (std\+::string new\+Staff)
+\begin{DoxyCompactList}\small\item\em Changes the current staff memeber. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_ab811f9460f56751ba22508272cb3daf0}{handle\+Notice}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override
+\begin{DoxyCompactList}\small\item\em Handle a received notice from the \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{open}} () override
+\begin{DoxyCompactList}\small\item\em Open up the booth, changes the is\+Open status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{close}} () override
+\begin{DoxyCompactList}\small\item\em Closes the booth, by changing the is\+Open status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}{report\+Status}} () override
+\begin{DoxyCompactList}\small\item\em A general overview of the booth. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{get\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the booth from the base class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventUnit}{Event\+Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventUnit_a8df87487f890622383c73a3e44effe6b}{Event\+Unit}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Unit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override final
+\begin{DoxyCompactList}\small\item\em Update method called by \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{craft\+Type}}
+\item 
+bool \mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{is\+Open}}
+\item 
+bool \mbox{\hyperlink{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}{is\+Secured}}
+\item 
+std\+::string \mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{current\+Staff}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Leaf -\/ Vender booth for selling crafts. 
+
+Represents an individual vendor booth in the artisanal bazaar. Reacts to various event notices including weather alerts, evacuation, and shift changes. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8h_source_l00014}{14}} of file \mbox{\hyperlink{VendorBooth_8h_source}{Vendor\+Booth.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVendorBooth_a59fd79a846b14b3281031d8da95060bc}\label{classVendorBooth_a59fd79a846b14b3281031d8da95060bc} 
+\index{VendorBooth@{VendorBooth}!VendorBooth@{VendorBooth}}
+\index{VendorBooth@{VendorBooth}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{VendorBooth()}{VendorBooth()}}
+{\footnotesize\ttfamily Vendor\+Booth\+::\+Vendor\+Booth (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{capacity,  }\item[{std\+::string}]{craft\+Type }\end{DoxyParamCaption})}
+
+
+
+Create a new Venderbooth object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the Venderbooth. \\
+\hline
+{\em capacity} & The capacity of the booth. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}\label{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f} 
+\index{VendorBooth@{VendorBooth}!changeStaff@{changeStaff}}
+\index{changeStaff@{changeStaff}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{changeStaff()}{changeStaff()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::change\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Staff }\end{DoxyParamCaption})}
+
+
+
+Changes the current staff memeber. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Staff} & The new staff member that will work at the booth \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_abf164000da2b0561262d189926c92e0a}\label{classVendorBooth_abf164000da2b0561262d189926c92e0a} 
+\index{VendorBooth@{VendorBooth}!close@{close}}
+\index{close@{close}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Closes the booth, by changing the is\+Open status. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_a5d068412744a34ae560855ed0cce598a}\label{classVendorBooth_a5d068412744a34ae560855ed0cce598a} 
+\index{VendorBooth@{VendorBooth}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Vendor\+Booth\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the capacity of the booth from the base class. 
+
+\begin{DoxyReturn}{Returns}
+the number of the capacity of the booth 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_ab811f9460f56751ba22508272cb3daf0}\label{classVendorBooth_ab811f9460f56751ba22508272cb3daf0} 
+\index{VendorBooth@{VendorBooth}!handleNotice@{handleNotice}}
+\index{handleNotice@{handleNotice}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{handleNotice()}{handleNotice()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::handle\+Notice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle a received notice from the \doxylink{classSubject}{Subject}. 
+
+Reacts to different notice types\+:
+\begin{DoxyItemize}
+\item Open\+: Opens the booth
+\item Close\+: Closes the booth
+\item Weather\+Alert\+: Remains open
+\item Evacuate\+: Closes and secures goods
+\item Schedule\+Change\+: Changes staff (if "{}new\+\_\+staff"{} detail exists)
+\item Medical\+Alert\+: Closes and secures goods
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The notice to handle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEventUnit_af8798c775cf0a533e6ae5a3798163c06}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}\label{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d} 
+\index{VendorBooth@{VendorBooth}!open@{open}}
+\index{open@{open}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open up the booth, changes the is\+Open status. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}\label{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495} 
+\index{VendorBooth@{VendorBooth}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+A general overview of the booth. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+\Hypertarget{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}\label{classVendorBooth_a85206dca0313bc54300ca2f13535ce54} 
+\index{VendorBooth@{VendorBooth}!secureGoods@{secureGoods}}
+\index{secureGoods@{secureGoods}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{secureGoods()}{secureGoods()}}
+{\footnotesize\ttfamily void Vendor\+Booth\+::secure\+Goods (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Changes the is\+Secure status of the booth. 
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{VendorBooth_8cpp_source}{Vendor\+Booth.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}\label{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28} 
+\index{VendorBooth@{VendorBooth}!craftType@{craftType}}
+\index{craftType@{craftType}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{craftType}{craftType}}
+{\footnotesize\ttfamily std\+::string Vendor\+Booth\+::craft\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8h_source_l00017}{17}} of file \mbox{\hyperlink{VendorBooth_8h_source}{Vendor\+Booth.\+h}}.
+
+\Hypertarget{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}\label{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf} 
+\index{VendorBooth@{VendorBooth}!currentStaff@{currentStaff}}
+\index{currentStaff@{currentStaff}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{currentStaff}{currentStaff}}
+{\footnotesize\ttfamily std\+::string Vendor\+Booth\+::current\+Staff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8h_source_l00020}{20}} of file \mbox{\hyperlink{VendorBooth_8h_source}{Vendor\+Booth.\+h}}.
+
+\Hypertarget{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}\label{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6} 
+\index{VendorBooth@{VendorBooth}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{isOpen}{isOpen}}
+{\footnotesize\ttfamily bool Vendor\+Booth\+::is\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8h_source_l00018}{18}} of file \mbox{\hyperlink{VendorBooth_8h_source}{Vendor\+Booth.\+h}}.
+
+\Hypertarget{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}\label{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42} 
+\index{VendorBooth@{VendorBooth}!isSecured@{isSecured}}
+\index{isSecured@{isSecured}!VendorBooth@{VendorBooth}}
+\doxysubsubsection{\texorpdfstring{isSecured}{isSecured}}
+{\footnotesize\ttfamily bool Vendor\+Booth\+::is\+Secured\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{VendorBooth_8h_source_l00019}{19}} of file \mbox{\hyperlink{VendorBooth_8h_source}{Vendor\+Booth.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{VendorBooth_8h}{Vendor\+Booth.\+h}}\item 
+src/composite/\mbox{\hyperlink{VendorBooth_8cpp}{Vendor\+Booth.\+cpp}}\end{DoxyCompactItemize}

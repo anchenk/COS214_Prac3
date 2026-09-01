@@ -1,0 +1,145 @@
+\doxysection{Subject Class Reference}
+\hypertarget{classSubject}{}\label{classSubject}\index{Subject@{Subject}}
+
+
+An abstract subject in the observer design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+Inheritance diagram for Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSubject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSubject_a7c4f522850f718466e5be7eb55ba1969}{\texorpdfstring{$\sim$}{\string~}\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{attach}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Add an event listener to be called whenever an event occurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{detach}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Remove a registered event listener from handling future events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}{notify}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice)
+\begin{DoxyCompactList}\small\item\em Send an event to all attached Observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attached\+Observers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract subject in the observer design pattern. 
+
+Provides an interface for classes to have event listeners registered to them so that the listeners can be auto notified on an event. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{Subject_8h_source_l00015}{15}} of file \mbox{\hyperlink{Subject_8h_source}{Subject.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSubject_a7c4f522850f718466e5be7eb55ba1969}\label{classSubject_a7c4f522850f718466e5be7eb55ba1969} 
+\index{Subject@{Subject}!````~Subject@{\texorpdfstring{$\sim$}{\string~}Subject}}
+\index{````~Subject@{\texorpdfstring{$\sim$}{\string~}Subject}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Subject()}{\string~Subject()}}
+{\footnotesize\ttfamily Subject\+::\texorpdfstring{$\sim$}{\string~}\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Required for polymorphic destruction of derived classes. Does NOT delete attached Observers (they are non-\/owning). 
+
+Definition at line \mbox{\hyperlink{Subject_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{Subject_8cpp_source}{Subject.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSubject_a0884bfe374d352c6488a1e40c84246c8}\label{classSubject_a0884bfe374d352c6488a1e40c84246c8} 
+\index{Subject@{Subject}!attach@{attach}}
+\index{attach@{attach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily void Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})}
+
+
+
+Add an event listener to be called whenever an event occurs. 
+
+If an \doxylink{classObserver}{Observer} that is already attached to this \doxylink{classSubject}{Subject} is passed into this method, it is ignored. Attached Observers will not be deleted when this subject is deleted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & The \doxylink{classObserver}{Observer} instance that will handle the event. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Subject_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{Subject_8cpp_source}{Subject.\+cpp}}.
+
+\Hypertarget{classSubject_a752a7596d52ab986539232f8377ca92c}\label{classSubject_a752a7596d52ab986539232f8377ca92c} 
+\index{Subject@{Subject}!detach@{detach}}
+\index{detach@{detach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily void Subject\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})}
+
+
+
+Remove a registered event listener from handling future events. 
+
+If an \doxylink{classObserver}{Observer} that is not attached to this \doxylink{classSubject}{Subject} is passed into this method, it is ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em observera} & The \doxylink{classObserver}{Observer} instance to detach from this \doxylink{classSubject}{Subject} so that it stops handling events. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Subject_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Subject_8cpp_source}{Subject.\+cpp}}.
+
+\Hypertarget{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}\label{classSubject_a589c32d012a669f6cbe03dda4ac86dbf} 
+\index{Subject@{Subject}!notify@{notify}}
+\index{notify@{notify}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Subject\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})}
+
+
+
+Send an event to all attached Observers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The event to broadcast to all attached Observers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Subject_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{Subject_8cpp_source}{Subject.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}\label{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf} 
+\index{Subject@{Subject}!attachedObservers@{attachedObservers}}
+\index{attachedObservers@{attachedObservers}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{attachedObservers}{attachedObservers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}$>$ Subject\+::attached\+Observers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Subject_8h_source_l00018}{18}} of file \mbox{\hyperlink{Subject_8h_source}{Subject.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/observer/\mbox{\hyperlink{Subject_8h}{Subject.\+h}}\item 
+src/observer/\mbox{\hyperlink{Subject_8cpp}{Subject.\+cpp}}\end{DoxyCompactItemize}

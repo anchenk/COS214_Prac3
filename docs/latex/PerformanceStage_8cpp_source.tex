@@ -1,0 +1,205 @@
+\doxysection{Performance\+Stage.\+cpp}
+\hypertarget{PerformanceStage_8cpp_source}{}\label{PerformanceStage_8cpp_source}\index{src/composite/PerformanceStage.cpp@{src/composite/PerformanceStage.cpp}}
+\mbox{\hyperlink{PerformanceStage_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/composite/PerformanceStage.h"{}}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00003}\mbox{\hyperlink{classPerformanceStage_a54e715b331d0df0a0eaaac15538fd5ee}{00003}}\ \mbox{\hyperlink{classPerformanceStage_a54e715b331d0df0a0eaaac15538fd5ee}{PerformanceStage::PerformanceStage}}(std::string\ name,\ \textcolor{keywordtype}{int}\ capacity)\ :\ \mbox{\hyperlink{classEventUnit}{EventUnit}}(name,\ true,\ capacity),\ currentPerformance(\textcolor{stringliteral}{"{}"{}}),\ isPerforming(false),\ currentStageManager(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00007}\mbox{\hyperlink{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247}{PerformanceStage::startPerformance}}(std::string\ show)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}\ ==\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ manager,\ no\ performance!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{isOpen}}\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Can't\ start\ a\ performance\ now\ this\ is\ closed!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}}\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Someone\ is\ already\ perfomring!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&s\ :\ \mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ ==\ show)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Show\ '"{}}\ <<\ show\ <<\ \textcolor{stringliteral}{"{}'\ is\ not\ in\ the\ schedule."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}\ =\ show;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00042}00042\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Performance\ '"{}}\ <<\ show\ <<\ \textcolor{stringliteral}{"{}'\ started\ with\ Stage\ Manager\ "{}}\ <<\ \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00045}\mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{PerformanceStage::pausePerformance}}()}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Crickets....\ there\ is\ no\ performance\ at\ the\ moment"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00052}00052\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Stop\ the\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}performance...\ for\ now!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00056}\mbox{\hyperlink{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}{PerformanceStage::changeStageManager}}(std::string\ newManager)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Hold\ your\ horses,\ wait\ for\ the\ performance\ to\ stop\ or\ pause\ it\ before\ you\ switch\ out\ a\ manager."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Bye\ bye,\ "{}}\ <<\ \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}\ <<\ \textcolor{stringliteral}{"{}.\ "{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00069}00069\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Helloooo\ "{}}\ <<\ newManager\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}\ =\ newManager;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00073}00073\ \textcolor{comment}{//\ observer}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00074}\mbox{\hyperlink{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad}{PerformanceStage::handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00075}00075\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!notice)}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ switch\ severity}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_af460ddf9f969aa60f3b0100be5af80db}{getSeverity}}())}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875}{Severity::Info}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Informational\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Severity::Warning}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Warning\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd}{Severity::Critical}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Critical\ Message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ switch\ type}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_a7a05c62929c0d946e9cd205b595cbdc3}{getType}}())}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274}{NoticeType::Open}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{open}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418}{NoticeType::Close}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pausePerformance}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{close}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308}{NoticeType::Evacuate}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}FIRE!\ FIRE!\ I\ mean\ everybody\ please\ evacuate\ in\ an\ orderly\ fashion."{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ has\ evacuated\ -\/\ performance\ stopped"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pausePerformance}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{close}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5}{NoticeType::WeatherAlert}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Incoming\ weather!\ "{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ performance\ paused\ due\ to\ weather"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pausePerformance}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ (outdoor)\ no\ performance\ to\ pause"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee}{NoticeType::ScheduleChange}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notice-\/>\mbox{\hyperlink{classNotice_a15ee07a57e1d6ecdddb14b1edd29df01}{hasDetail}}(\textcolor{stringliteral}{"{}new\_manager"{}}))}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}{changeStageManager}}(notice-\/>\mbox{\hyperlink{classNotice_afa626ad50d0ed7e74e4011671f6f93d9}{getDetail}}(\textcolor{stringliteral}{"{}new\_manager"{}}));}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4}{NoticeType::MedicalAlert}}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}STOP!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ performance\ paused\ for\ medical\ emergency"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pausePerformance}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Oh\ no!\ Medical\ Emergency!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ has\ no\ performance\ to\ pause"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ received\ unknown\ notice:\ "{}}\ <<\ notice-\/>\mbox{\hyperlink{classNotice_a535ec24c6347d3b92c98a1131b52d6be}{getMessage}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00149}00149\ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00150}\mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{00150}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{PerformanceStage::open}}()}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00151}00151\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00152}00152\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Now\ opening........"{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{},\ everyone\ celebrate!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00153}00153\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{isOpen}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00156}\mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{00156}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{PerformanceStage::close}}()}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00157}00157\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00158}00158\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Now\ closing\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{},\ everyone\ say\ goodbye!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{isOpen}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00162}\mbox{\hyperlink{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}{00162}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}{PerformanceStage::reportStatus}}()}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00163}00163\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00164}00164\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{getName}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00165}00165\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Capacity:\ "{}}\ <<\ \mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{getCapacity}}()\ <<\ \textcolor{stringliteral}{"{}\ people"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00166}00166\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Is\ Performing:\ "{}}\ <<\ (\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}}\ ?\ \textcolor{stringliteral}{"{}Yes"{}}\ :\ \textcolor{stringliteral}{"{}No"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00167}00167\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Current\ Performance:\ "{}}\ <<\ (\mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}.empty()\ ?\ \textcolor{stringliteral}{"{}None"{}}\ :\ \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00168}00168\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Stage\ Manager:\ "{}}\ <<\ (\mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}}.empty()\ ?\ \textcolor{stringliteral}{"{}None\ Assigned"{}}\ :\ \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00169}00169\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Schedule\ Count:\ "{}}\ <<\ \mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}}.empty())}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00172}00172\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Schedule:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&show\ :\ \mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ -\/\ "{}}\ <<\ show;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}.empty()\ \&\&\ \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}\ ==\ show\ \&\&\ \mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ [Performing]"{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}.empty()\ \&\&\ \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}}\ ==\ show\ \&\&\ !\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}})}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ [Paused]"{}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00189}00189\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ No\ shows\ scheduled."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00191}00191\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00193}00193\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}}\ <<\ (\mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{getIsOutdoor}}()\ ?\ \textcolor{stringliteral}{"{}Outdoor"{}}\ :\ \textcolor{stringliteral}{"{}Indoor"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00196}\mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{00196}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{PerformanceStage::getCapacity}}()}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00197}00197\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{EventUnit::getCapacity}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8cpp_source_l00199}00199\ \}}
+
+\end{DoxyCode}

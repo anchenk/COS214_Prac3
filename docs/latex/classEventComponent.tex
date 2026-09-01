@@ -1,0 +1,292 @@
+\doxysection{Event\+Component Class Reference}
+\hypertarget{classEventComponent}{}\label{classEventComponent}\index{EventComponent@{EventComponent}}
+
+
+Abstract Component participant in the Composite pattern.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Component.\+h$>$}
+
+Inheritance diagram for Event\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.584000cm]{classEventComponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{open}} ()=0
+\begin{DoxyCompactList}\small\item\em Open the event component. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{close}} ()=0
+\begin{DoxyCompactList}\small\item\em Close the event component. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{report\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Report the status of the event component. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classEventComponent_a34ec2477f21d736438e5caac06908f52}{get\+Capacity}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the total capacity of the event component. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classObserver_aea0a922d1a76e0fc924e001d25925a95}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice)=0
+\begin{DoxyCompactList}\small\item\em Handle an event sent out by the \doxylink{classSubject}{Subject} this \doxylink{classObserver}{Observer} is attached to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Component participant in the Composite pattern. 
+
+Represents any element in the event structure -\/ both composites (\doxylink{classEventGroup}{Event\+Group}) and leaves (\doxylink{classEventUnit}{Event\+Unit}). Defines the common interface for all components.
+
+This class also implements \doxylink{classObserver}{Observer}, allowing components to receive notifications from Subjects.
+
+\begin{DoxyNote}{Note}
+This class is abstract and cannot be instantiated directly. 
+
+Implements the Component role in the Composite pattern. 
+
+Implements the \doxylink{classObserver}{Observer} role in the \doxylink{classObserver}{Observer} pattern. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8h_source_l00027}{27}} of file \mbox{\hyperlink{EventComponent_8h_source}{Event\+Component.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}\label{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609} 
+\index{EventComponent@{EventComponent}!EventComponent@{EventComponent}}
+\index{EventComponent@{EventComponent}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{EventComponent()}{EventComponent()}}
+{\footnotesize\ttfamily Event\+Component\+::\+Event\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{bool}]{is\+Outdoor }\end{DoxyParamCaption})}
+
+
+
+Construct a new Event Component object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The unique name of the component \\
+\hline
+{\em is\+Outdoor} & Whether the component is outdoors (affects weather reactions) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+\Hypertarget{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}\label{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed} 
+\index{EventComponent@{EventComponent}!````~EventComponent@{\texorpdfstring{$\sim$}{\string~}EventComponent}}
+\index{````~EventComponent@{\texorpdfstring{$\sim$}{\string~}EventComponent}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventComponent()}{\string~EventComponent()}}
+{\footnotesize\ttfamily Event\+Component\+::\texorpdfstring{$\sim$}{\string~}\+Event\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Required for polymorphic destruction of derived classes. 
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}\label{classEventComponent_a8e13a68d681c1b6affcf13435a09adab} 
+\index{EventComponent@{EventComponent}!close@{close}}
+\index{close@{close}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily virtual void Event\+Component\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Close the event component. 
+
+Pure virtual -\/ must be implemented by derived classes. For \doxylink{classEventGroup}{Event\+Group}\+: closes all children recursively. For \doxylink{classEventUnit}{Event\+Unit}\+: closes the specific leaf. 
+
+Implemented in \mbox{\hyperlink{classEventGroup_a600460d78e6fc8d0ec13b1767590dcc9}{Event\+Group}}, \mbox{\hyperlink{classFirstAidPoint_af1f016bfeff175ca3d5b963014b6e66e}{First\+Aid\+Point}}, \mbox{\hyperlink{classFoodStation_a9c95865f39502e2ab5d795c22509f8b2}{Food\+Station}}, \mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{Information\+Desk}}, \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{Performance\+Stage}}, and \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{Vendor\+Booth}}.
+
+\Hypertarget{classEventComponent_a34ec2477f21d736438e5caac06908f52}\label{classEventComponent_a34ec2477f21d736438e5caac06908f52} 
+\index{EventComponent@{EventComponent}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily virtual int Event\+Component\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the total capacity of the event component. 
+
+Pure virtual -\/ must be implemented by derived classes. For \doxylink{classEventGroup}{Event\+Group}\+: returns sum of all children capacities. For \doxylink{classEventUnit}{Event\+Unit}\+: returns its own capacity.
+
+\begin{DoxyReturn}{Returns}
+int The total capacity 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classEventGroup_a43b6ffeecf20e63bc1d7cf85503288ae}{Event\+Group}}, \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}, \mbox{\hyperlink{classFirstAidPoint_ad6345b28de3f37b729bc9cfcdceb846e}{First\+Aid\+Point}}, \mbox{\hyperlink{classFoodStation_acc10faf9688e8965c0ca1f12c729a77a}{Food\+Station}}, \mbox{\hyperlink{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}{Information\+Desk}}, \mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{Performance\+Stage}}, and \mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{Vendor\+Booth}}.
+
+\Hypertarget{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}\label{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625} 
+\index{EventComponent@{EventComponent}!getIsOutdoor@{getIsOutdoor}}
+\index{getIsOutdoor@{getIsOutdoor}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{getIsOutdoor()}{getIsOutdoor()}}
+{\footnotesize\ttfamily bool Event\+Component\+::get\+Is\+Outdoor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the component is outdoors. 
+
+\begin{DoxyReturn}{Returns}
+bool True if outdoor, false if indoor 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+\Hypertarget{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}\label{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811} 
+\index{EventComponent@{EventComponent}!getName@{getName}}
+\index{getName@{getName}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Event\+Component\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the component. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The component name 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+\Hypertarget{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}\label{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10} 
+\index{EventComponent@{EventComponent}!getParent@{getParent}}
+\index{getParent@{getParent}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} Event\+Component\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the parent of this component. 
+
+\begin{DoxyReturn}{Returns}
+Event\+Group\texorpdfstring{$\ast$}{*} Pointer to parent \doxylink{classEventGroup}{Event\+Group}, or nullptr if root 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+\Hypertarget{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}\label{classEventComponent_ada5f41377769e0cbdaa7546477b3970c} 
+\index{EventComponent@{EventComponent}!open@{open}}
+\index{open@{open}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual void Event\+Component\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Open the event component. 
+
+Pure virtual -\/ must be implemented by derived classes. For \doxylink{classEventGroup}{Event\+Group}\+: opens all children recursively. For \doxylink{classEventUnit}{Event\+Unit}\+: opens the specific leaf. 
+
+Implemented in \mbox{\hyperlink{classEventGroup_aa12055a0456c9e6faf6de3a12a70b0e1}{Event\+Group}}, \mbox{\hyperlink{classFirstAidPoint_af90b14462e1f59f3b5f6ac772f23bd50}{First\+Aid\+Point}}, \mbox{\hyperlink{classFoodStation_acdae764c8afbb2c86933b93fe84623df}{Food\+Station}}, \mbox{\hyperlink{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}{Information\+Desk}}, \mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{Performance\+Stage}}, and \mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{Vendor\+Booth}}.
+
+\Hypertarget{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}\label{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082} 
+\index{EventComponent@{EventComponent}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily virtual void Event\+Component\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Report the status of the event component. 
+
+Pure virtual -\/ must be implemented by derived classes. Prints information about the component and its children (if any). 
+
+Implemented in \mbox{\hyperlink{classEventGroup_a2e6049e6e4383a826b3e9ae7ea78b932}{Event\+Group}}, \mbox{\hyperlink{classFirstAidPoint_ab01d63b1d68290fe92f4ed7a39e36982}{First\+Aid\+Point}}, \mbox{\hyperlink{classFoodStation_ae6a77c09ae1e87531bc2e97f943f3a08}{Food\+Station}}, \mbox{\hyperlink{classInformationDesk_aa5650143860010912113065941518ffc}{Information\+Desk}}, \mbox{\hyperlink{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}{Performance\+Stage}}, and \mbox{\hyperlink{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}{Vendor\+Booth}}.
+
+\Hypertarget{classEventComponent_a86786497e5bf8342e2b832be85f90517}\label{classEventComponent_a86786497e5bf8342e2b832be85f90517} 
+\index{EventComponent@{EventComponent}!setParent@{setParent}}
+\index{setParent@{setParent}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void Event\+Component\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the parent of this component. 
+
+This is a non-\/owning back-\/pointer for tree navigation. Called by \doxylink{classEventGroup_a029c8ac7c257c547e8b47f2d01ceaaba}{Event\+Group\+::add\+Child()} when adding a child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent \doxylink{classEventGroup}{Event\+Group} (nullptr for root) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{EventComponent_8cpp_source}{Event\+Component.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEventComponent_a6b490a0da407740d4f32891fa167a06e}\label{classEventComponent_a6b490a0da407740d4f32891fa167a06e} 
+\index{EventComponent@{EventComponent}!isOutdoor@{isOutdoor}}
+\index{isOutdoor@{isOutdoor}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{isOutdoor}{isOutdoor}}
+{\footnotesize\ttfamily bool Event\+Component\+::is\+Outdoor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8h_source_l00031}{31}} of file \mbox{\hyperlink{EventComponent_8h_source}{Event\+Component.\+h}}.
+
+\Hypertarget{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}\label{classEventComponent_a82348aef118d5b35e0962a4f632cbd19} 
+\index{EventComponent@{EventComponent}!name@{name}}
+\index{name@{name}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Event\+Component\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8h_source_l00030}{30}} of file \mbox{\hyperlink{EventComponent_8h_source}{Event\+Component.\+h}}.
+
+\Hypertarget{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}\label{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554} 
+\index{EventComponent@{EventComponent}!parent@{parent}}
+\index{parent@{parent}!EventComponent@{EventComponent}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEventGroup}{Event\+Group}}\texorpdfstring{$\ast$}{*} Event\+Component\+::parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{EventComponent_8h_source_l00032}{32}} of file \mbox{\hyperlink{EventComponent_8h_source}{Event\+Component.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{EventComponent_8h}{Event\+Component.\+h}}\item 
+src/composite/\mbox{\hyperlink{EventComponent_8cpp}{Event\+Component.\+cpp}}\end{DoxyCompactItemize}

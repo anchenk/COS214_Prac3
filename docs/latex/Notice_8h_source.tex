@@ -1,0 +1,66 @@
+\doxysection{Notice.\+h}
+\hypertarget{Notice_8h_source}{}\label{Notice_8h_source}\index{include/observer/Notice.h@{include/observer/Notice.h}}
+\mbox{\hyperlink{Notice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ NOTICE\_H}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ NOTICE\_H}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}../enums/Severity.h"{}}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}../enums/NoticeType.h"{}}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00011}00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEventComponent}{EventComponent}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00017}\mbox{\hyperlink{classNotice}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNotice}{Notice}}}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00019}00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00020}\mbox{\hyperlink{classNotice_afc06dc3f5acc14f67add893698fa8764}{00020}}\ \ \ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{classNotice_afc06dc3f5acc14f67add893698fa8764}{details}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00021}\mbox{\hyperlink{classNotice_ad07e4c63f849c0c960addcd2fd2276a2}{00021}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classNotice_ad07e4c63f849c0c960addcd2fd2276a2}{message}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00022}\mbox{\hyperlink{classNotice_ac919443a699b764060de0f77096e13c8}{00022}}\ \ \ \ \ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}}\ \mbox{\hyperlink{classNotice_ac919443a699b764060de0f77096e13c8}{severity}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00023}\mbox{\hyperlink{classNotice_ae2f875d6153cefbd8baaadcf4d6cdc88}{00023}}\ \ \ \ \ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}{NoticeType}}\ \mbox{\hyperlink{classNotice_ae2f875d6153cefbd8baaadcf4d6cdc88}{type}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00029}\mbox{\hyperlink{classNotice_a28e9ba649c0a877d9a90ba30e9caa24e}{00029}}\ \ \ \ \ \mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classNotice_a28e9ba649c0a877d9a90ba30e9caa24e}{location}};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classNotice}{Notice}}(\mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}{NoticeType}}\ \mbox{\hyperlink{classNotice_ae2f875d6153cefbd8baaadcf4d6cdc88}{type}},\ std::string\ \mbox{\hyperlink{classNotice_ad07e4c63f849c0c960addcd2fd2276a2}{message}});}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}{NoticeType}}\ \mbox{\hyperlink{classNotice_a7a05c62929c0d946e9cd205b595cbdc3}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00052}00052\ \ \ \ \ std::string\ \mbox{\hyperlink{classNotice_a535ec24c6347d3b92c98a1131b52d6be}{getMessage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}}\ \mbox{\hyperlink{classNotice_af460ddf9f969aa60f3b0100be5af80db}{getSeverity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classNotice_a5cda55b7c54e1e54bde38bb9a7da0785}{getLocation}}();}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotice_a882fb9ad5d675b0b889f8fb691f62613}{setLocation}}(\mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classNotice_a28e9ba649c0a877d9a90ba30e9caa24e}{location}});}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00082}00082\ \ \ \ \ std::string\ \mbox{\hyperlink{classNotice_afa626ad50d0ed7e74e4011671f6f93d9}{getDetail}}(\textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{const}\ std::map<std::string,\ std::string>\ \&\mbox{\hyperlink{classNotice_a65128e08b77792a8a7a78444d56a16dd}{getDetails}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classNotice_a15ee07a57e1d6ecdddb14b1edd29df01}{hasDetail}}(\textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotice_aad514c34907260fb1a1d67440bd34361}{setSeverity}}(\mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}}\ \mbox{\hyperlink{classNotice_ac919443a699b764060de0f77096e13c8}{severity}});}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotice_a28bd1fcb99bc52cfc7efa684341b2e93}{addDetail}}(\textcolor{keyword}{const}\ std::string\ \&key,\ \textcolor{keyword}{const}\ std::string\ \&value);}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotice_a9c23de23c88bc13a8fc98c93c8e13a96}{print}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_a34b1793dca8bbc06124f2ac35e7703a8}{open}}(\textcolor{keyword}{const}\ std::string\ \&facility);}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00134}00134\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_afaf78f13a602d2318838e9a179321468}{close}}(\textcolor{keyword}{const}\ std::string\ \&facility,\ \textcolor{keyword}{const}\ std::string\ \&reason);}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00142}00142\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_ad7d692666e560bd31ca9777015e5778e}{weatherAlert}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classNotice_ad07e4c63f849c0c960addcd2fd2276a2}{message}});}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00150}00150\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_a772961669c88c49db341317fac1a5897}{evacuation}}(\textcolor{keyword}{const}\ std::string\ \&reason);}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_ad41bb7e742d527edad1ba5ecccbd6588}{shiftChange}}();}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNotice}{Notice}}\ \mbox{\hyperlink{classNotice_a7a969deddcea618fbff3aa08585b2698}{medicalAlert}}(\textcolor{keyword}{const}\ std::string\ \&condition,\ \mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classNotice_a28e9ba649c0a877d9a90ba30e9caa24e}{location}},\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}}\ \mbox{\hyperlink{classNotice_ac919443a699b764060de0f77096e13c8}{severity}});}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00168}00168\ \};}
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{Notice_8h_source_l00170}00170\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

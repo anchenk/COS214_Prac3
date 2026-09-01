@@ -1,0 +1,434 @@
+\doxysection{First\+Aid\+Point Class Reference}
+\hypertarget{classFirstAidPoint}{}\label{classFirstAidPoint}\index{FirstAidPoint@{FirstAidPoint}}
+
+
+Concrete Leaf -\/ First aid and medical assistance point.  
+
+
+
+
+{\ttfamily \#include $<$First\+Aid\+Point.\+h$>$}
+
+Inheritance diagram for First\+Aid\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classFirstAidPoint}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFirstAidPoint_a18bfdb39008de0e471c827a799b8f8cd}{First\+Aid\+Point}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em creates an object for the first aid point \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a8d9bd195cc5757f03f64638aec366c82}{treat\+Patient}} (std\+::string condition)
+\begin{DoxyCompactList}\small\item\em will treat the patient and handle variables as necessary while taking into account certain environmental conditions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a4fa437466367dc2a07a29f9cbef50f04}{assist\+Evacuation}} ()
+\begin{DoxyCompactList}\small\item\em help in evacuating if available to calm the people \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a96a6c0e00a68cda9568698995b06c799}{check\+Supplies}} ()
+\begin{DoxyCompactList}\small\item\em to check the variable supplies\+Level to ensure there is enough to treat patients \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a56a2f668dc28016924755d2fd440ac20}{prepare\+For\+Injuries}} ()
+\begin{DoxyCompactList}\small\item\em to prepare by ensuring there is staff members, an operational first aid point as well as enough supplies \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_adc46a1e3da79257275cb5136592f67b3}{restock\+Supplies}} (int amount)
+\begin{DoxyCompactList}\small\item\em to increase the amount of supplies \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a68268aa33bb4a4fc6ea7981e4de07965}{dispatch\+Team}} (\mbox{\hyperlink{classEventComponent}{Event\+Component}} \texorpdfstring{$\ast$}{*}location)
+\begin{DoxyCompactList}\small\item\em to ensure there is a team available for a certain active incident occuring \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a19a7f085b0669e2e8b77f37814fac535}{change\+Doctor}} (std\+::string new\+Doctor)
+\begin{DoxyCompactList}\small\item\em to change the current doctor that is working \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_a8cd628f7b9b988645a17e8b90fc0b893}{handle\+Notice}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override
+\begin{DoxyCompactList}\small\item\em Handle a received notice from the \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_af90b14462e1f59f3b5f6ac772f23bd50}{open}} () override
+\begin{DoxyCompactList}\small\item\em open up the first aid station for function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_af1f016bfeff175ca3d5b963014b6e66e}{close}} () override
+\begin{DoxyCompactList}\small\item\em close the first aid station for function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFirstAidPoint_ab01d63b1d68290fe92f4ed7a39e36982}{report\+Status}} () override
+\begin{DoxyCompactList}\small\item\em a general overview of the station \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFirstAidPoint_ad6345b28de3f37b729bc9cfcdceb846e}{get\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em to get the capacity of the station from base class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventUnit}{Event\+Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventUnit_a8df87487f890622383c73a3e44effe6b}{Event\+Unit}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Unit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override final
+\begin{DoxyCompactList}\small\item\em Update method called by \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classFirstAidPoint_a5158de837e0b7609df26b3f2b5073189}{medical\+Staff}}
+\item 
+int \mbox{\hyperlink{classFirstAidPoint_a70353cd52dd51c09148f128f3c46405f}{supplies\+Level}}
+\item 
+bool \mbox{\hyperlink{classFirstAidPoint_a23d5c1a553099b45b264dff38099789f}{is\+Operational}}
+\item 
+int \mbox{\hyperlink{classFirstAidPoint_ae79986862b8d150ef78b6497ee68f0db}{patients\+Treated}}
+\item 
+std\+::string \mbox{\hyperlink{classFirstAidPoint_aa7c978be68d43d05dec725e628eeecb4}{current\+Doctor}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classFirstAidPoint_ad60634be83242a15f476145b10ccc86e}{active\+Incidents}}
+\item 
+bool \mbox{\hyperlink{classFirstAidPoint_aad9591f878ffae0ebcea17a27e82ae8d}{is\+Evacuating}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Leaf -\/ First aid and medical assistance point. 
+
+Represents a medical station that provides emergency care. This is a CRITICAL SERVICE that ALWAYS remains operational. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00013}{13}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFirstAidPoint_a18bfdb39008de0e471c827a799b8f8cd}\label{classFirstAidPoint_a18bfdb39008de0e471c827a799b8f8cd} 
+\index{FirstAidPoint@{FirstAidPoint}!FirstAidPoint@{FirstAidPoint}}
+\index{FirstAidPoint@{FirstAidPoint}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{FirstAidPoint()}{FirstAidPoint()}}
+{\footnotesize\ttfamily First\+Aid\+Point\+::\+First\+Aid\+Point (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+creates an object for the first aid point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & of the first aid point \\
+\hline
+{\em capacity} & of the first aid point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFirstAidPoint_a4fa437466367dc2a07a29f9cbef50f04}\label{classFirstAidPoint_a4fa437466367dc2a07a29f9cbef50f04} 
+\index{FirstAidPoint@{FirstAidPoint}!assistEvacuation@{assistEvacuation}}
+\index{assistEvacuation@{assistEvacuation}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{assistEvacuation()}{assistEvacuation()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::assist\+Evacuation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+help in evacuating if available to calm the people 
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a19a7f085b0669e2e8b77f37814fac535}\label{classFirstAidPoint_a19a7f085b0669e2e8b77f37814fac535} 
+\index{FirstAidPoint@{FirstAidPoint}!changeDoctor@{changeDoctor}}
+\index{changeDoctor@{changeDoctor}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{changeDoctor()}{changeDoctor()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::change\+Doctor (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Doctor }\end{DoxyParamCaption})}
+
+
+
+to change the current doctor that is working 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Doctor} & who will take over from the current doctor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a96a6c0e00a68cda9568698995b06c799}\label{classFirstAidPoint_a96a6c0e00a68cda9568698995b06c799} 
+\index{FirstAidPoint@{FirstAidPoint}!checkSupplies@{checkSupplies}}
+\index{checkSupplies@{checkSupplies}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{checkSupplies()}{checkSupplies()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::check\+Supplies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+to check the variable supplies\+Level to ensure there is enough to treat patients 
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_af1f016bfeff175ca3d5b963014b6e66e}\label{classFirstAidPoint_af1f016bfeff175ca3d5b963014b6e66e} 
+\index{FirstAidPoint@{FirstAidPoint}!close@{close}}
+\index{close@{close}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+close the first aid station for function 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a68268aa33bb4a4fc6ea7981e4de07965}\label{classFirstAidPoint_a68268aa33bb4a4fc6ea7981e4de07965} 
+\index{FirstAidPoint@{FirstAidPoint}!dispatchTeam@{dispatchTeam}}
+\index{dispatchTeam@{dispatchTeam}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{dispatchTeam()}{dispatchTeam()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::dispatch\+Team (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEventComponent}{Event\+Component}} \texorpdfstring{$\ast$}{*}}]{location }\end{DoxyParamCaption})}
+
+
+
+to ensure there is a team available for a certain active incident occuring 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & the location where the incident is occuring \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_ad6345b28de3f37b729bc9cfcdceb846e}\label{classFirstAidPoint_ad6345b28de3f37b729bc9cfcdceb846e} 
+\index{FirstAidPoint@{FirstAidPoint}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int First\+Aid\+Point\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+to get the capacity of the station from base class 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00309}{309}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a8cd628f7b9b988645a17e8b90fc0b893}\label{classFirstAidPoint_a8cd628f7b9b988645a17e8b90fc0b893} 
+\index{FirstAidPoint@{FirstAidPoint}!handleNotice@{handleNotice}}
+\index{handleNotice@{handleNotice}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{handleNotice()}{handleNotice()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::handle\+Notice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle a received notice from the \doxylink{classSubject}{Subject}. 
+
+CRITICAL SERVICE\+: ALWAYS remains operational. Reacts to\+:
+\begin{DoxyItemize}
+\item Open\+: Opens the station
+\item Close\+: Closes if told
+\item Weather\+Alert\+: REMAINS OPEN, prepares for injuries
+\item Evacuate\+: Assists evacuation, closes
+\item Schedule\+Change\+: Changes doctor (if "{}new\+\_\+doctor"{} detail exists)
+\item Medical\+Alert\+: Dispatches team and treats patients 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{classEventUnit_af8798c775cf0a533e6ae5a3798163c06}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_af90b14462e1f59f3b5f6ac772f23bd50}\label{classFirstAidPoint_af90b14462e1f59f3b5f6ac772f23bd50} 
+\index{FirstAidPoint@{FirstAidPoint}!open@{open}}
+\index{open@{open}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+open up the first aid station for function 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a56a2f668dc28016924755d2fd440ac20}\label{classFirstAidPoint_a56a2f668dc28016924755d2fd440ac20} 
+\index{FirstAidPoint@{FirstAidPoint}!prepareForInjuries@{prepareForInjuries}}
+\index{prepareForInjuries@{prepareForInjuries}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{prepareForInjuries()}{prepareForInjuries()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::prepare\+For\+Injuries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+to prepare by ensuring there is staff members, an operational first aid point as well as enough supplies 
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_ab01d63b1d68290fe92f4ed7a39e36982}\label{classFirstAidPoint_ab01d63b1d68290fe92f4ed7a39e36982} 
+\index{FirstAidPoint@{FirstAidPoint}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+a general overview of the station 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_adc46a1e3da79257275cb5136592f67b3}\label{classFirstAidPoint_adc46a1e3da79257275cb5136592f67b3} 
+\index{FirstAidPoint@{FirstAidPoint}!restockSupplies@{restockSupplies}}
+\index{restockSupplies@{restockSupplies}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{restockSupplies()}{restockSupplies()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::restock\+Supplies (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+to increase the amount of supplies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & of which we increase it \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+\Hypertarget{classFirstAidPoint_a8d9bd195cc5757f03f64638aec366c82}\label{classFirstAidPoint_a8d9bd195cc5757f03f64638aec366c82} 
+\index{FirstAidPoint@{FirstAidPoint}!treatPatient@{treatPatient}}
+\index{treatPatient@{treatPatient}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{treatPatient()}{treatPatient()}}
+{\footnotesize\ttfamily void First\+Aid\+Point\+::treat\+Patient (\begin{DoxyParamCaption}\item[{std\+::string}]{condition }\end{DoxyParamCaption})}
+
+
+
+will treat the patient and handle variables as necessary while taking into account certain environmental conditions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & the condition in which the patient finds themselves \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{FirstAidPoint_8cpp_source}{First\+Aid\+Point.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFirstAidPoint_ad60634be83242a15f476145b10ccc86e}\label{classFirstAidPoint_ad60634be83242a15f476145b10ccc86e} 
+\index{FirstAidPoint@{FirstAidPoint}!activeIncidents@{activeIncidents}}
+\index{activeIncidents@{activeIncidents}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{activeIncidents}{activeIncidents}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ First\+Aid\+Point\+::active\+Incidents\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00022}{22}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_aa7c978be68d43d05dec725e628eeecb4}\label{classFirstAidPoint_aa7c978be68d43d05dec725e628eeecb4} 
+\index{FirstAidPoint@{FirstAidPoint}!currentDoctor@{currentDoctor}}
+\index{currentDoctor@{currentDoctor}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{currentDoctor}{currentDoctor}}
+{\footnotesize\ttfamily std\+::string First\+Aid\+Point\+::current\+Doctor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00021}{21}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_aad9591f878ffae0ebcea17a27e82ae8d}\label{classFirstAidPoint_aad9591f878ffae0ebcea17a27e82ae8d} 
+\index{FirstAidPoint@{FirstAidPoint}!isEvacuating@{isEvacuating}}
+\index{isEvacuating@{isEvacuating}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{isEvacuating}{isEvacuating}}
+{\footnotesize\ttfamily bool First\+Aid\+Point\+::is\+Evacuating\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00023}{23}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_a23d5c1a553099b45b264dff38099789f}\label{classFirstAidPoint_a23d5c1a553099b45b264dff38099789f} 
+\index{FirstAidPoint@{FirstAidPoint}!isOperational@{isOperational}}
+\index{isOperational@{isOperational}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{isOperational}{isOperational}}
+{\footnotesize\ttfamily bool First\+Aid\+Point\+::is\+Operational\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00019}{19}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_a5158de837e0b7609df26b3f2b5073189}\label{classFirstAidPoint_a5158de837e0b7609df26b3f2b5073189} 
+\index{FirstAidPoint@{FirstAidPoint}!medicalStaff@{medicalStaff}}
+\index{medicalStaff@{medicalStaff}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{medicalStaff}{medicalStaff}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ First\+Aid\+Point\+::medical\+Staff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00017}{17}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_ae79986862b8d150ef78b6497ee68f0db}\label{classFirstAidPoint_ae79986862b8d150ef78b6497ee68f0db} 
+\index{FirstAidPoint@{FirstAidPoint}!patientsTreated@{patientsTreated}}
+\index{patientsTreated@{patientsTreated}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{patientsTreated}{patientsTreated}}
+{\footnotesize\ttfamily int First\+Aid\+Point\+::patients\+Treated\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00020}{20}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+\Hypertarget{classFirstAidPoint_a70353cd52dd51c09148f128f3c46405f}\label{classFirstAidPoint_a70353cd52dd51c09148f128f3c46405f} 
+\index{FirstAidPoint@{FirstAidPoint}!suppliesLevel@{suppliesLevel}}
+\index{suppliesLevel@{suppliesLevel}!FirstAidPoint@{FirstAidPoint}}
+\doxysubsubsection{\texorpdfstring{suppliesLevel}{suppliesLevel}}
+{\footnotesize\ttfamily int First\+Aid\+Point\+::supplies\+Level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FirstAidPoint_8h_source_l00018}{18}} of file \mbox{\hyperlink{FirstAidPoint_8h_source}{First\+Aid\+Point.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{FirstAidPoint_8h}{First\+Aid\+Point.\+h}}\item 
+src/composite/\mbox{\hyperlink{FirstAidPoint_8cpp}{First\+Aid\+Point.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\doxysection{Vendor\+Booth.\+cpp}
+\hypertarget{VendorBooth_8cpp_source}{}\label{VendorBooth_8cpp_source}\index{src/composite/VendorBooth.cpp@{src/composite/VendorBooth.cpp}}
+\mbox{\hyperlink{VendorBooth_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/composite/VendorBooth.h"{}}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00003}\mbox{\hyperlink{classVendorBooth_a59fd79a846b14b3281031d8da95060bc}{00003}}\ \mbox{\hyperlink{classVendorBooth_a59fd79a846b14b3281031d8da95060bc}{VendorBooth::VendorBooth}}(std::string\ name,\ \textcolor{keywordtype}{int}\ capacity,\ std::string\ craftType)\ :\ \mbox{\hyperlink{classEventUnit}{EventUnit}}(name,\ false,\ capacity),\ craftType(craftType),\ isOpen(false),\ isSecured(false),\ currentStaff(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00007}\mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{VendorBooth::secureGoods}}()}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}{isSecured}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00010}00010\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Your\ goods\ are\ nice\ and\ secure!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00013}\mbox{\hyperlink{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}{00013}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}{VendorBooth::changeStaff}}(std::string\ newStaff)}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}}\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Say\ goodbye\ to\ "{}}\ <<\ \mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}}\ =\ newStaff;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Say\ hi\ to\ your\ new\ staff\ member,\ "{}}\ <<\ newStaff\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00021}\mbox{\hyperlink{classVendorBooth_ab811f9460f56751ba22508272cb3daf0}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_ab811f9460f56751ba22508272cb3daf0}{VendorBooth::handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (!notice)}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ switch\ severity}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_af460ddf9f969aa60f3b0100be5af80db}{getSeverity}}())}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875}{Severity::Info}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Informational\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Severity::Warning}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Warning\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd}{Severity::Critical}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Critical\ Message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ switch\ type}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_a7a05c62929c0d946e9cd205b595cbdc3}{getType}}())}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274}{NoticeType::Open}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{open}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418}{NoticeType::Close}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{close}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308}{NoticeType::Evacuate}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LEAVE\ IN\ A\ CALM\ ORDER!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ evacuated\ -\/\ goods\ secured"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{close}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{secureGoods}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5}{NoticeType::WeatherAlert}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Incoming\ weather!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ is\ indoors,\ safe\ to\ continue\ operating."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee}{NoticeType::ScheduleChange}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notice-\/>\mbox{\hyperlink{classNotice_a15ee07a57e1d6ecdddb14b1edd29df01}{hasDetail}}(\textcolor{stringliteral}{"{}new\_staff"{}}))}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_adad4b1abd41d350e3835a3d410d0273f}{changeStaff}}(notice-\/>\mbox{\hyperlink{classNotice_afa626ad50d0ed7e74e4011671f6f93d9}{getDetail}}(\textcolor{stringliteral}{"{}new\_staff"{}}));}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4}{NoticeType::MedicalAlert}}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{isOpen}})}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Everybody\ stay\ back!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ closed\ due\ to\ medical\ emergency"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{close}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a85206dca0313bc54300ca2f13535ce54}{secureGoods}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ received\ unknown\ notice:\ "{}}\ <<\ notice-\/>\mbox{\hyperlink{classNotice_a535ec24c6347d3b92c98a1131b52d6be}{getMessage}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00077}00077\ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00078}\mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{00078}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_aec7b879470ddc9d3cf203534cecb635d}{VendorBooth::open}}()}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{isOpen}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00081}00081\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}The\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ booth\ is\ officially\ opened!!\ Welcome\ one\ and\ all,\ make\ sure\ to\ bring\ a\ friend\ along"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00084}\mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{00084}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_abf164000da2b0561262d189926c92e0a}{VendorBooth::close}}()}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{isOpen}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00087}00087\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Oh\ no!\ The\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ booth\ is\ closed...\ come\ back\ next\ time!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00090}\mbox{\hyperlink{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}{00090}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVendorBooth_a0d32f5b9958ada3005e70cd545dea495}{VendorBooth::reportStatus}}()}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00091}00091\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00092}00092\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{getName}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00093}00093\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Craft\ Type:\ "{}}\ <<\ \mbox{\hyperlink{classVendorBooth_a87bfab8b2c906a3e901af63b63139e28}{craftType}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00094}00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Capacity:\ "{}}\ <<\ \mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{getCapacity}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00095}00095\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Is\ Open:\ "{}}\ <<\ (\mbox{\hyperlink{classVendorBooth_a370490e6fa982f5ec9712cd59ec00bb6}{isOpen}}\ ?\ \textcolor{stringliteral}{"{}Yes"{}}\ :\ \textcolor{stringliteral}{"{}No"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00096}00096\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Is\ Secured:\ "{}}\ <<\ (\mbox{\hyperlink{classVendorBooth_a1e1b2c9f46c3f74b87c95c65bde54c42}{isSecured}}\ ?\ \textcolor{stringliteral}{"{}Yes"{}}\ :\ \textcolor{stringliteral}{"{}No"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00097}00097\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Current\ Staff:\ "{}}\ <<\ (\mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}}.empty()\ ?\ \textcolor{stringliteral}{"{}None"{}}\ :\ \mbox{\hyperlink{classVendorBooth_a58912836fdfa0f7f8950633e7ca8d3bf}{currentStaff}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00098}00098\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}}\ <<\ (\mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{getIsOutdoor}}()\ ?\ \textcolor{stringliteral}{"{}Outdoors"{}}\ :\ \textcolor{stringliteral}{"{}Indoors"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00101}\mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{00101}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classVendorBooth_a5d068412744a34ae560855ed0cce598a}{VendorBooth::getCapacity}}()}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{EventUnit::getCapacity}}();}
+\DoxyCodeLine{\Hypertarget{VendorBooth_8cpp_source_l00104}00104\ \}}
+
+\end{DoxyCode}

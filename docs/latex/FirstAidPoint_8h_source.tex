@@ -1,0 +1,53 @@
+\doxysection{First\+Aid\+Point.\+h}
+\hypertarget{FirstAidPoint_8h_source}{}\label{FirstAidPoint_8h_source}\index{include/composite/FirstAidPoint.h@{include/composite/FirstAidPoint.h}}
+\mbox{\hyperlink{FirstAidPoint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ FIRST\_AID\_POINT\_H}}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ FIRST\_AID\_POINT\_H}}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventUnit_8h}{EventUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00013}\mbox{\hyperlink{classFirstAidPoint}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFirstAidPoint}{FirstAidPoint}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEventUnit}{EventUnit}}}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00016}00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00017}\mbox{\hyperlink{classFirstAidPoint_a5158de837e0b7609df26b3f2b5073189}{00017}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classFirstAidPoint_a5158de837e0b7609df26b3f2b5073189}{medicalStaff}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00018}\mbox{\hyperlink{classFirstAidPoint_a70353cd52dd51c09148f128f3c46405f}{00018}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFirstAidPoint_a70353cd52dd51c09148f128f3c46405f}{suppliesLevel}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00019}\mbox{\hyperlink{classFirstAidPoint_a23d5c1a553099b45b264dff38099789f}{00019}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFirstAidPoint_a23d5c1a553099b45b264dff38099789f}{isOperational}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00020}\mbox{\hyperlink{classFirstAidPoint_ae79986862b8d150ef78b6497ee68f0db}{00020}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFirstAidPoint_ae79986862b8d150ef78b6497ee68f0db}{patientsTreated}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00021}\mbox{\hyperlink{classFirstAidPoint_aa7c978be68d43d05dec725e628eeecb4}{00021}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classFirstAidPoint_aa7c978be68d43d05dec725e628eeecb4}{currentDoctor}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00022}\mbox{\hyperlink{classFirstAidPoint_ad60634be83242a15f476145b10ccc86e}{00022}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classFirstAidPoint_ad60634be83242a15f476145b10ccc86e}{activeIncidents}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00023}\mbox{\hyperlink{classFirstAidPoint_aad9591f878ffae0ebcea17a27e82ae8d}{00023}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFirstAidPoint_aad9591f878ffae0ebcea17a27e82ae8d}{isEvacuating}};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{classFirstAidPoint}{FirstAidPoint}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}});}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a8d9bd195cc5757f03f64638aec366c82}{treatPatient}}(std::string\ condition);}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a4fa437466367dc2a07a29f9cbef50f04}{assistEvacuation}}();}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a96a6c0e00a68cda9568698995b06c799}{checkSupplies}}();}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a56a2f668dc28016924755d2fd440ac20}{prepareForInjuries}}();}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_adc46a1e3da79257275cb5136592f67b3}{restockSupplies}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a68268aa33bb4a4fc6ea7981e4de07965}{dispatchTeam}}(\mbox{\hyperlink{classEventComponent}{EventComponent}}\ *location);}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a19a7f085b0669e2e8b77f37814fac535}{changeDoctor}}(std::string\ newDoctor);}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_a8cd628f7b9b988645a17e8b90fc0b893}{handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_af90b14462e1f59f3b5f6ac772f23bd50}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_af1f016bfeff175ca3d5b963014b6e66e}{close}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFirstAidPoint_ab01d63b1d68290fe92f4ed7a39e36982}{reportStatus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFirstAidPoint_ad6345b28de3f37b729bc9cfcdceb846e}{getCapacity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00111}00111\ \};}
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{FirstAidPoint_8h_source_l00113}00113\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

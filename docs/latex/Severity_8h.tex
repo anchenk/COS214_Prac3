@@ -1,0 +1,44 @@
+\doxysection{include/enums/\+Severity.h File Reference}
+\hypertarget{Severity_8h}{}\label{Severity_8h}\index{include/enums/Severity.h@{include/enums/Severity.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}} \{ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875}{Info}}
+, \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Warning}}
+, \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd}{Critical}}
+ \}
+\begin{DoxyCompactList}\small\item\em Severity levels for event notices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Severity_8h_a11717da96dc4e4a5f79371318448f82b}\label{Severity_8h_a11717da96dc4e4a5f79371318448f82b} 
+\index{Severity.h@{Severity.h}!Severity@{Severity}}
+\index{Severity@{Severity}!Severity.h@{Severity.h}}
+\doxysubsubsection{\texorpdfstring{Severity}{Severity}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82b}{Severity}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Severity levels for event notices. 
+
+Indicates the urgency and importance of a notice. Used by observers to determine the appropriate response level. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Info@{Info}!Severity.h@{Severity.h}}\index{Severity.h@{Severity.h}!Info@{Info}}}\Hypertarget{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875}\label{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875} 
+Info&Informational notice -\/ no immediate action required. Used for routine notifications like Open, Schedule\+Change. Observers may log these but typically don\textquotesingle{}t change behavior. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!Severity.h@{Severity.h}}\index{Severity.h@{Severity.h}!Warning@{Warning}}}\Hypertarget{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa}\label{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa} 
+Warning&Warning notice -\/ action may be required. Used for Weather\+Alert, Close and some Medical\+Alert cases. Observers should be aware and may take preventive actions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Critical@{Critical}!Severity.h@{Severity.h}}\index{Severity.h@{Severity.h}!Critical@{Critical}}}\Hypertarget{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd}\label{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd} 
+Critical&Critical notice -\/ immediate action required. Used for Evacuate and severe Medical\+Alert cases. Observers must respond immediately (close, evacuate, dispatch teams). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Severity_8h_source_l00011}{11}} of file \mbox{\hyperlink{Severity_8h_source}{Severity.\+h}}.
+

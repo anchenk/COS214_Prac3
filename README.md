@@ -2,7 +2,7 @@
 
 ## Event Concept
 
-**COS214 Lentedag** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
+**The Heap & Heap Artisanal Bazaar** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
 
 ### Key Features
 - **Composite Pattern**: Hierarchical organization of event components
@@ -24,9 +24,9 @@
 
 | Name | Student Number |
 |------|---------------|
-| **Anchen Kruger** | [25073703#] | 
-| **Caleb Jennings** | [Student#] | 
-| **Chloe Larsen** | [Student#] | 
+| **Anchen Kruger** | u25073703 | 
+| **Caleb Jennings** | u25173805 | 
+| **Chloe Larsen** | u25004141 | 
 
 ---
 
@@ -92,8 +92,11 @@ class ClassName {
 
 ```bash
 
-# Build the project
+# Build the project (automatically runs after build)
 make
+
+# Just build without running
+make eventflow
 
 # Run the executable
 make run
@@ -101,13 +104,40 @@ make run
 # Clean build artifacts
 make clean
 
-# Build with debug symbols
-make debug
+# Create submission zip with original directory structure
+make zip
 
-# Generate documentation
-make docs
+# Create submission zip with flattened includes
+make flat-zip
 
-# View documentation
-make view-docs
+# Full clean and rebuild
+make clean && make
+
+```
+
+### MakeFile explained!
+
+```bash
+
+# Build the project (automatically runs after build)
+make
+
+# Just build without running
+make eventflow
+
+# Run the executable
+make run
+
+# Clean build artifacts
+make clean
+
+# Create submission zip with original directory structure
+make zip
+
+# Create submission zip with flattened includes
+make flat-zip
+
+# Full clean and rebuild
+make clean && make
 
 ```

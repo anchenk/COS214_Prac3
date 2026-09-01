@@ -1,0 +1,43 @@
+\doxysection{Food\+Station.\+h}
+\hypertarget{FoodStation_8h_source}{}\label{FoodStation_8h_source}\index{include/composite/FoodStation.h@{include/composite/FoodStation.h}}
+\mbox{\hyperlink{FoodStation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ FOOD\_STATION\_H}}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ FOOD\_STATION\_H}}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventUnit_8h}{EventUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00013}\mbox{\hyperlink{classFoodStation}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFoodStation}{FoodStation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEventUnit}{EventUnit}}}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00016}\mbox{\hyperlink{classFoodStation_a30f0173daa75cfc01abc04e91bc426a7}{00016}}\ \ \ \ \ std::map<std::string,\ int>\ \mbox{\hyperlink{classFoodStation_a30f0173daa75cfc01abc04e91bc426a7}{inventory}};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00017}\mbox{\hyperlink{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}{00017}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}{cuisineType}};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00018}\mbox{\hyperlink{classFoodStation_a2e3f3f6232fc7263febfc4cd90e0bc80}{00018}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFoodStation_a2e3f3f6232fc7263febfc4cd90e0bc80}{isServing}};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00019}\mbox{\hyperlink{classFoodStation_a4a40949cea4771bcbc983a266868a33f}{00019}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classFoodStation_a4a40949cea4771bcbc983a266868a33f}{currentChef}};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classFoodStation}{FoodStation}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}},\ std::string\ \mbox{\hyperlink{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}{cuisineType}});}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_a0270ea681f68ca2e9783a25509e4ab81}{prepareFood}}();}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_adcfe42abb60864e8b523afc16d003883}{checkInventory}}();}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_a4e0e7235f4492fd02c68280271917fa3}{restock}}(std::string\ item,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_a4723051ece1123a827f6f6b61b575a4f}{changeChef}}(std::string\ newChef);}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_abf30ec43d74bb3eabf2285a856672765}{handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_acdae764c8afbb2c86933b93fe84623df}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_a9c95865f39502e2ab5d795c22509f8b2}{close}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFoodStation_ae6a77c09ae1e87531bc2e97f943f3a08}{reportStatus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFoodStation_acc10faf9688e8965c0ca1f12c729a77a}{getCapacity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00092}00092\ \};}
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{FoodStation_8h_source_l00094}00094\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\doxysection{Subject.\+h}
+\hypertarget{Subject_8h_source}{}\label{Subject_8h_source}\index{include/observer/Subject.h@{include/observer/Subject.h}}
+\mbox{\hyperlink{Subject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ SUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ SUBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Notice_8h}{Notice.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Observer_8h}{Observer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00015}\mbox{\hyperlink{classSubject}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSubject}{Subject}}}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00018}\mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{00018}}\ \ \ \ \ std::vector<Observer\ *>\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}};}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classSubject_a7c4f522850f718466e5be7eb55ba1969}{\string~Subject}}();}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{attach}}(\mbox{\hyperlink{classObserver}{Observer}}\ *observer);}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{detach}}(\mbox{\hyperlink{classObserver}{Observer}}\ *observer);}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}{notify}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice);}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00054}00054\ \};}
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Subject_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

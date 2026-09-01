@@ -1,0 +1,349 @@
+\doxysection{Information\+Desk Class Reference}
+\hypertarget{classInformationDesk}{}\label{classInformationDesk}\index{InformationDesk@{InformationDesk}}
+
+
+Concrete Leaf -\/ Visitor information desk.  
+
+
+
+
+{\ttfamily \#include $<$Information\+Desk.\+h$>$}
+
+Inheritance diagram for Information\+Desk\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classInformationDesk}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInformationDesk_a1ff10435d8ac195e65ee2c0e229e3cf7}{Information\+Desk}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Creates an Information Desk object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e}{add\+Staff}} (std\+::string staff\+Member)
+\begin{DoxyCompactList}\small\item\em Adds a staff member to the string vector of staff members. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInformationDesk_a5d0c31fcb4cb78bcb0246766cd3c5693}{add\+Language}} (std\+::string new\+Language)
+\begin{DoxyCompactList}\small\item\em Adds a new language to the string vector of languages. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInformationDesk_ab10fe7095cc53c6f195d003b6185c646}{get\+Is\+Open}} ()
+\begin{DoxyCompactList}\small\item\em Will know if the Information desk is open or not. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classInformationDesk_a8ebf118601f9c19bff9cecf8a2be266e}{get\+Visitors\+Helped}} ()
+\begin{DoxyCompactList}\small\item\em The amount of visitors helped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInformationDesk_a5f0dc4720a71de38e4939b8134382ecb}{handle\+Notice}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override
+\begin{DoxyCompactList}\small\item\em Handle a received notice from the \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}{open}} () override
+\begin{DoxyCompactList}\small\item\em Will open the desk for use by changing the is\+Open variable to true. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{close}} () override
+\begin{DoxyCompactList}\small\item\em Will close the desk by changing the is\+Open variable to false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInformationDesk_aa5650143860010912113065941518ffc}{report\+Status}} () override
+\begin{DoxyCompactList}\small\item\em A general overview of what is happening in the Information desk by using all the qualities of the object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}{get\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em the Capacity of the Information desk \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventUnit}{Event\+Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventUnit_a8df87487f890622383c73a3e44effe6b}{Event\+Unit}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Unit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override final
+\begin{DoxyCompactList}\small\item\em Update method called by \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}{staff}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}}
+\item 
+bool \mbox{\hyperlink{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}{is\+Open}}
+\item 
+int \mbox{\hyperlink{classInformationDesk_ae7b2a38d765089edbb43e5eb0e7bf667}{visitors\+Helped}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Leaf -\/ Visitor information desk. 
+
+Represents an information desk that helps visitors navigate the bazaar. This is a CRITICAL SERVICE that remains OPEN during most alerts. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8h_source_l00013}{13}} of file \mbox{\hyperlink{InformationDesk_8h_source}{Information\+Desk.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classInformationDesk_a1ff10435d8ac195e65ee2c0e229e3cf7}\label{classInformationDesk_a1ff10435d8ac195e65ee2c0e229e3cf7} 
+\index{InformationDesk@{InformationDesk}!InformationDesk@{InformationDesk}}
+\index{InformationDesk@{InformationDesk}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{InformationDesk()}{InformationDesk()}}
+{\footnotesize\ttfamily Information\+Desk\+::\+Information\+Desk (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Creates an Information Desk object. 
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInformationDesk_a5d0c31fcb4cb78bcb0246766cd3c5693}\label{classInformationDesk_a5d0c31fcb4cb78bcb0246766cd3c5693} 
+\index{InformationDesk@{InformationDesk}!addLanguage@{addLanguage}}
+\index{addLanguage@{addLanguage}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{addLanguage()}{addLanguage()}}
+{\footnotesize\ttfamily std\+::string Information\+Desk\+::add\+Language (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Language }\end{DoxyParamCaption})}
+
+
+
+Adds a new language to the string vector of languages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Language} & the new language that will be added to the list of languages \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e}\label{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e} 
+\index{InformationDesk@{InformationDesk}!addStaff@{addStaff}}
+\index{addStaff@{addStaff}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{addStaff()}{addStaff()}}
+{\footnotesize\ttfamily void Information\+Desk\+::add\+Staff (\begin{DoxyParamCaption}\item[{std\+::string}]{staff\+Member }\end{DoxyParamCaption})}
+
+
+
+Adds a staff member to the string vector of staff members. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em staff\+Member} & the new staff member that will be added to the list of staff \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}\label{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4} 
+\index{InformationDesk@{InformationDesk}!close@{close}}
+\index{close@{close}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Information\+Desk\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will close the desk by changing the is\+Open variable to false. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}\label{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564} 
+\index{InformationDesk@{InformationDesk}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Information\+Desk\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the Capacity of the Information desk 
+
+\begin{DoxyReturn}{Returns}
+the capacity specified to the information desk 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_ab10fe7095cc53c6f195d003b6185c646}\label{classInformationDesk_ab10fe7095cc53c6f195d003b6185c646} 
+\index{InformationDesk@{InformationDesk}!getIsOpen@{getIsOpen}}
+\index{getIsOpen@{getIsOpen}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{getIsOpen()}{getIsOpen()}}
+{\footnotesize\ttfamily bool Information\+Desk\+::get\+Is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Will know if the Information desk is open or not. 
+
+\begin{DoxyReturn}{Returns}
+a boolean to let the user know if the desk if open (true) or not (false) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_a8ebf118601f9c19bff9cecf8a2be266e}\label{classInformationDesk_a8ebf118601f9c19bff9cecf8a2be266e} 
+\index{InformationDesk@{InformationDesk}!getVisitorsHelped@{getVisitorsHelped}}
+\index{getVisitorsHelped@{getVisitorsHelped}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{getVisitorsHelped()}{getVisitorsHelped()}}
+{\footnotesize\ttfamily int Information\+Desk\+::get\+Visitors\+Helped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The amount of visitors helped. 
+
+\begin{DoxyReturn}{Returns}
+The number of visitors that have been helped at the desk 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_a5f0dc4720a71de38e4939b8134382ecb}\label{classInformationDesk_a5f0dc4720a71de38e4939b8134382ecb} 
+\index{InformationDesk@{InformationDesk}!handleNotice@{handleNotice}}
+\index{handleNotice@{handleNotice}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{handleNotice()}{handleNotice()}}
+{\footnotesize\ttfamily void Information\+Desk\+::handle\+Notice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle a received notice from the \doxylink{classSubject}{Subject}. 
+
+CRITICAL SERVICE\+: Remains open during most alerts. Reacts to\+:
+\begin{DoxyItemize}
+\item Open\+: Opens the desk
+\item Close\+: Can close when told to
+\item Weather\+Alert\+: STAYS OPEN, provides weather safety info
+\item Evacuate\+: Closes and assists with evacuation
+\item Schedule\+Change\+: Adds staff (if "{}new\+\_\+staff"{} detail exists)
+\item Medical\+Alert\+: STAYS OPEN, directs visitors away from incident
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The notice to handle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEventUnit_af8798c775cf0a533e6ae5a3798163c06}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}\label{classInformationDesk_a05045ad9063e074ecca50715c3dd833d} 
+\index{InformationDesk@{InformationDesk}!open@{open}}
+\index{open@{open}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Information\+Desk\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Will open the desk for use by changing the is\+Open variable to true. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+\Hypertarget{classInformationDesk_aa5650143860010912113065941518ffc}\label{classInformationDesk_aa5650143860010912113065941518ffc} 
+\index{InformationDesk@{InformationDesk}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily void Information\+Desk\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+A general overview of what is happening in the Information desk by using all the qualities of the object. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{InformationDesk_8cpp_source}{Information\+Desk.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}\label{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d} 
+\index{InformationDesk@{InformationDesk}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{isOpen}{isOpen}}
+{\footnotesize\ttfamily bool Information\+Desk\+::is\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8h_source_l00018}{18}} of file \mbox{\hyperlink{InformationDesk_8h_source}{Information\+Desk.\+h}}.
+
+\Hypertarget{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}\label{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe} 
+\index{InformationDesk@{InformationDesk}!languages@{languages}}
+\index{languages@{languages}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{languages}{languages}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Information\+Desk\+::languages\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8h_source_l00017}{17}} of file \mbox{\hyperlink{InformationDesk_8h_source}{Information\+Desk.\+h}}.
+
+\Hypertarget{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}\label{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d} 
+\index{InformationDesk@{InformationDesk}!staff@{staff}}
+\index{staff@{staff}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{staff}{staff}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Information\+Desk\+::staff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8h_source_l00016}{16}} of file \mbox{\hyperlink{InformationDesk_8h_source}{Information\+Desk.\+h}}.
+
+\Hypertarget{classInformationDesk_ae7b2a38d765089edbb43e5eb0e7bf667}\label{classInformationDesk_ae7b2a38d765089edbb43e5eb0e7bf667} 
+\index{InformationDesk@{InformationDesk}!visitorsHelped@{visitorsHelped}}
+\index{visitorsHelped@{visitorsHelped}!InformationDesk@{InformationDesk}}
+\doxysubsubsection{\texorpdfstring{visitorsHelped}{visitorsHelped}}
+{\footnotesize\ttfamily int Information\+Desk\+::visitors\+Helped\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{InformationDesk_8h_source_l00019}{19}} of file \mbox{\hyperlink{InformationDesk_8h_source}{Information\+Desk.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{InformationDesk_8h}{Information\+Desk.\+h}}\item 
+src/composite/\mbox{\hyperlink{InformationDesk_8cpp}{Information\+Desk.\+cpp}}\end{DoxyCompactItemize}
