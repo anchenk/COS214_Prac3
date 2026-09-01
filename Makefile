@@ -4,9 +4,7 @@ BUILD_DIR:= build
 TARGET   := eventflow
 ZIP_NAME := submission.zip
 FLAT_DIR := flat_src
-
-# Extra root files and directories (escape spaces with backslashes)
-ROOT_FILES := README.md Doxyfile visualParadigm resources/COS214\ -\ Practical\ 3.pdf
+ROOT_FILES := README.md Doxyfile visualParadigm resources/COS214\ -\ Practical\ 3.pdf Makefile
 
 # Find main.cpp and all src/ cpp files
 SRCS     := $(shell find src -type f -name '*.cpp')
