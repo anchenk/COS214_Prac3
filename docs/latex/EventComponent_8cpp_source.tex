@@ -1,0 +1,41 @@
+\doxysection{Event\+Component.\+cpp}
+\hypertarget{EventComponent_8cpp_source}{}\label{EventComponent_8cpp_source}\index{src/composite/EventComponent.cpp@{src/composite/EventComponent.cpp}}
+\mbox{\hyperlink{EventComponent_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/composite/EventComponent.h"{}}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../include/composite/EventGroup.h"{}}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00004}\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{00004}}\ \mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{EventComponent::EventComponent}}(std::string\ name,\ \textcolor{keywordtype}{bool}\ isOutdoor)\ :\ name(name),\ isOutdoor(isOutdoor),\ parent(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00006}\mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{00006}}\ \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{EventComponent::\string~EventComponent}}()}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}-\/>\mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{detach}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00012}\mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{00012}}\ std::string\ \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{EventComponent::getName}}()}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}};}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00017}\mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{00017}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{EventComponent::getIsOutdoor}}()}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{isOutdoor}};}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00022}\mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{EventComponent::setParent}}(\mbox{\hyperlink{classEventGroup}{EventGroup}}\ *parent)}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>parent\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ this-\/>parent-\/>\mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{detach}}(\textcolor{keyword}{this});\ \textcolor{comment}{//\ stop\ getting\ events\ from\ old\ parent}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}-\/>\mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{attach}}(\textcolor{keyword}{this});\ \textcolor{comment}{//\ get\ events\ from\ new\ parent}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00029}00029\ \ \ \ \ this-\/>parent\ =\ \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}};}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00032}\mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{00032}}\ \mbox{\hyperlink{classEventGroup}{EventGroup}}\ *\mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{EventComponent::getParent}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00033}00033\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}};}
+\DoxyCodeLine{\Hypertarget{EventComponent_8cpp_source_l00035}00035\ \}}
+
+\end{DoxyCode}

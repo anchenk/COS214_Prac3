@@ -1,0 +1,46 @@
+\doxysection{Event\+Group.\+h}
+\hypertarget{EventGroup_8h_source}{}\label{EventGroup_8h_source}\index{include/composite/EventGroup.h@{include/composite/EventGroup.h}}
+\mbox{\hyperlink{EventGroup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ EVENT\_GROUP\_H}}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ EVENT\_GROUP\_H}}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventComponent_8h}{EventComponent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../observer/Subject.h"{}}}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00024}\mbox{\hyperlink{classEventGroup}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEventGroup}{EventGroup}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEventComponent}{EventComponent}},}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classSubject}{Subject}}}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00028}00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00029}\mbox{\hyperlink{classEventGroup_ab40750a6515cce45cbae5e2099092e38}{00029}}\ \ \ \ \ std::vector<EventComponent\ *>\ \mbox{\hyperlink{classEventGroup_ab40750a6515cce45cbae5e2099092e38}{children}};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00030}\mbox{\hyperlink{classEventGroup_a4852ac8c6d3ca110f0582b297e1be4b1}{00030}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventGroup_a4852ac8c6d3ca110f0582b297e1be4b1}{isOpen}};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00031}\mbox{\hyperlink{classEventGroup_a57adfcaa94a47d0766d7533060a78a6e}{00031}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventGroup_a57adfcaa94a47d0766d7533060a78a6e}{isOperationZone}};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classEventGroup}{EventGroup}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{isOutdoor}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventGroup_a4852ac8c6d3ca110f0582b297e1be4b1}{isOpen}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEventGroup_a57adfcaa94a47d0766d7533060a78a6e}{isOperationZone}});}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classEventGroup_aec45fca847056b3ea8b62899c5903f55}{\string~EventGroup}}();}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventGroup_a029c8ac7c257c547e8b47f2d01ceaaba}{addChild}}(\mbox{\hyperlink{classEventComponent}{EventComponent}}\ *child);}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classEventGroup_abe700d722780eb0496cd28ad5822dedb}{removeChild}}(\mbox{\hyperlink{classEventComponent}{EventComponent}}\ *child);}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{classEventComponent}{EventComponent}}\ *\mbox{\hyperlink{classEventGroup_a762f9ca3584f0503fb314eb1bd1251c4}{findChild}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}});\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00088}00088\ \ \ \ \ std::vector<EventComponent\ *>\ \mbox{\hyperlink{classEventGroup_a033c76fe8989d358759a11453cd1e84e}{getChildren}}();}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventGroup_aa9f464af69c5dee35d49aa4ce33d049c}{update}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventGroup_aa12055a0456c9e6faf6de3a12a70b0e1}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventGroup_a600460d78e6fc8d0ec13b1767590dcc9}{close}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEventGroup_a2e6049e6e4383a826b3e9ae7ea78b932}{reportStatus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEventGroup_a43b6ffeecf20e63bc1d7cf85503288ae}{getCapacity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00131}00131\ \};}
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{EventGroup_8h_source_l00133}00133\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,346 @@
+\doxysection{Performance\+Stage Class Reference}
+\hypertarget{classPerformanceStage}{}\label{classPerformanceStage}\index{PerformanceStage@{PerformanceStage}}
+
+
+Concrete Leaf -\/ Performance stage for live entertainment.  
+
+
+
+
+{\ttfamily \#include $<$Performance\+Stage.\+h$>$}
+
+Inheritance diagram for Performance\+Stage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPerformanceStage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPerformanceStage_a54e715b331d0df0a0eaaac15538fd5ee}{Performance\+Stage}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em The constructor for the Performance stage object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247}{start\+Performance}} (std\+::string show)
+\begin{DoxyCompactList}\small\item\em Starting the performance based on certain conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pause\+Performance}} ()
+\begin{DoxyCompactList}\small\item\em pausing the performance it has not completed yet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}{change\+Stage\+Manager}} (std\+::string new\+Manager)
+\begin{DoxyCompactList}\small\item\em change the current manager to another manager \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad}{handle\+Notice}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override
+\begin{DoxyCompactList}\small\item\em Handle a received notice from the \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{open}} () override
+\begin{DoxyCompactList}\small\item\em Open up the stage to be performed on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{close}} () override
+\begin{DoxyCompactList}\small\item\em Close the stage as there can no longer be performed on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}{report\+Status}} () override
+\begin{DoxyCompactList}\small\item\em General overview of the performance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{get\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em the capacity that the performance is able to take \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventUnit}{Event\+Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventUnit_a8df87487f890622383c73a3e44effe6b}{Event\+Unit}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Unit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override final
+\begin{DoxyCompactList}\small\item\em Update method called by \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}}
+\item 
+std\+::string \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{current\+Performance}}
+\item 
+bool \mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{is\+Performing}}
+\item 
+bool \mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{is\+Open}}
+\item 
+std\+::string \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{current\+Stage\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Leaf -\/ Performance stage for live entertainment. 
+
+Represents a stage where performances are held. Reacts to weather alerts by pausing performances, schedule changes, and medical alerts. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00012}{12}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPerformanceStage_a54e715b331d0df0a0eaaac15538fd5ee}\label{classPerformanceStage_a54e715b331d0df0a0eaaac15538fd5ee} 
+\index{PerformanceStage@{PerformanceStage}!PerformanceStage@{PerformanceStage}}
+\index{PerformanceStage@{PerformanceStage}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{PerformanceStage()}{PerformanceStage()}}
+{\footnotesize\ttfamily Performance\+Stage\+::\+Performance\+Stage (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+The constructor for the Performance stage object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & of the performance \\
+\hline
+{\em capacity} & of the performance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}\label{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05} 
+\index{PerformanceStage@{PerformanceStage}!changeStageManager@{changeStageManager}}
+\index{changeStageManager@{changeStageManager}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{changeStageManager()}{changeStageManager()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::change\+Stage\+Manager (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Manager }\end{DoxyParamCaption})}
+
+
+
+change the current manager to another manager 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Manager} & the manager that will be changed to be the current manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}\label{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd} 
+\index{PerformanceStage@{PerformanceStage}!close@{close}}
+\index{close@{close}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Close the stage as there can no longer be performed on. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}\label{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd} 
+\index{PerformanceStage@{PerformanceStage}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Performance\+Stage\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the capacity that the performance is able to take 
+
+\begin{DoxyReturn}{Returns}
+the capacity value of the performance stage 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad}\label{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad} 
+\index{PerformanceStage@{PerformanceStage}!handleNotice@{handleNotice}}
+\index{handleNotice@{handleNotice}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{handleNotice()}{handleNotice()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::handle\+Notice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle a received notice from the \doxylink{classSubject}{Subject}. 
+
+Reacts to different notice types\+:
+\begin{DoxyItemize}
+\item Open\+: Opens the stage
+\item Close\+: Pauses performance and closes stage
+\item Weather\+Alert\+: Pauses performance
+\item Evacuate\+: Pauses performance and closes
+\item Schedule\+Change\+: Changes stage manager (if "{}new\+\_\+manager"{} detail exists)
+\item Medical\+Alert\+: Pauses performance
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The notice to handle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEventUnit_af8798c775cf0a533e6ae5a3798163c06}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_a37f924589370dcff12782031b3c440dd}\label{classPerformanceStage_a37f924589370dcff12782031b3c440dd} 
+\index{PerformanceStage@{PerformanceStage}!open@{open}}
+\index{open@{open}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Open up the stage to be performed on. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}\label{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984} 
+\index{PerformanceStage@{PerformanceStage}!pausePerformance@{pausePerformance}}
+\index{pausePerformance@{pausePerformance}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{pausePerformance()}{pausePerformance()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::pause\+Performance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pausing the performance it has not completed yet 
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}\label{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2} 
+\index{PerformanceStage@{PerformanceStage}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+General overview of the performance. 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+\Hypertarget{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247}\label{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247} 
+\index{PerformanceStage@{PerformanceStage}!startPerformance@{startPerformance}}
+\index{startPerformance@{startPerformance}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{startPerformance()}{startPerformance()}}
+{\footnotesize\ttfamily void Performance\+Stage\+::start\+Performance (\begin{DoxyParamCaption}\item[{std\+::string}]{show }\end{DoxyParamCaption})}
+
+
+
+Starting the performance based on certain conditions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & the current show that wants to start \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{PerformanceStage_8cpp_source}{Performance\+Stage.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}\label{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1} 
+\index{PerformanceStage@{PerformanceStage}!currentPerformance@{currentPerformance}}
+\index{currentPerformance@{currentPerformance}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{currentPerformance}{currentPerformance}}
+{\footnotesize\ttfamily std\+::string Performance\+Stage\+::current\+Performance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00016}{16}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+\Hypertarget{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}\label{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e} 
+\index{PerformanceStage@{PerformanceStage}!currentStageManager@{currentStageManager}}
+\index{currentStageManager@{currentStageManager}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{currentStageManager}{currentStageManager}}
+{\footnotesize\ttfamily std\+::string Performance\+Stage\+::current\+Stage\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00019}{19}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+\Hypertarget{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}\label{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7} 
+\index{PerformanceStage@{PerformanceStage}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{isOpen}{isOpen}}
+{\footnotesize\ttfamily bool Performance\+Stage\+::is\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00018}{18}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+\Hypertarget{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}\label{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6} 
+\index{PerformanceStage@{PerformanceStage}!isPerforming@{isPerforming}}
+\index{isPerforming@{isPerforming}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{isPerforming}{isPerforming}}
+{\footnotesize\ttfamily bool Performance\+Stage\+::is\+Performing\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00017}{17}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+\Hypertarget{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}\label{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead} 
+\index{PerformanceStage@{PerformanceStage}!schedule@{schedule}}
+\index{schedule@{schedule}!PerformanceStage@{PerformanceStage}}
+\doxysubsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Performance\+Stage\+::schedule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PerformanceStage_8h_source_l00015}{15}} of file \mbox{\hyperlink{PerformanceStage_8h_source}{Performance\+Stage.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{PerformanceStage_8h}{Performance\+Stage.\+h}}\item 
+src/composite/\mbox{\hyperlink{PerformanceStage_8cpp}{Performance\+Stage.\+cpp}}\end{DoxyCompactItemize}
