@@ -5,7 +5,7 @@
 
 /**
  * @brief Concrete Leaf - Vender booth for selling crafts.
- * 
+ *
  * Represents an individual vendor booth in the artisanal bazaar.
  * Reacts to various event notices including weather alerts, evacuation,
  * and shift changes.
@@ -21,10 +21,10 @@ private:
 
 public:
 	/**
-	 * @brief Create a new Venderbooth object.
-	 *
-	 * @param name The name of the Venderbooth.
-	 * @param capacity The capacity of the booth.
+	 * @brief Constructor
+	 * @param name The name of the vendor booth
+	 * @param capacity Maximum capacity
+	 * @param craftType Type of crafts sold (e.g., "Pottery", "Jewelry")
 	 */
 	VendorBooth(std::string name, int capacity, std::string craftType);
 

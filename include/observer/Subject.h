@@ -41,7 +41,7 @@ public:
      *
      * If an Observer that is not attached to this Subject is passed into this method, it is ignored.
      *
-     * @param observera The Observer instance to detach from this Subject so that it stops handling events.
+     * @param observer The Observer instance to detach from this Subject so that it stops handling events.
      */
     void detach(Observer *observer);
 

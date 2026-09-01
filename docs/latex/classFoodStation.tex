@@ -1,0 +1,354 @@
+\doxysection{Food\+Station Class Reference}
+\hypertarget{classFoodStation}{}\label{classFoodStation}\index{FoodStation@{FoodStation}}
+
+
+Concrete Leaf -\/ Food preparation and tasting station.  
+
+
+
+
+{\ttfamily \#include $<$Food\+Station.\+h$>$}
+
+Inheritance diagram for Food\+Station\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classFoodStation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFoodStation_a3e000fe58c2d77763d49b3d70d76d8dd}{Food\+Station}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}}, std\+::string \mbox{\hyperlink{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}{cuisine\+Type}})
+\begin{DoxyCompactList}\small\item\em Create foodstation object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_a0270ea681f68ca2e9783a25509e4ab81}{prepare\+Food}} ()
+\begin{DoxyCompactList}\small\item\em indicate that food is beind prepped, in context of availability of everything involved \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_adcfe42abb60864e8b523afc16d003883}{check\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em check that there exists something in inventory and list it\textquotesingle{}s name and amount \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_a4e0e7235f4492fd02c68280271917fa3}{restock}} (std\+::string item, int amount)
+\begin{DoxyCompactList}\small\item\em will increase the amount of a certain item with a certain amount \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_a4723051ece1123a827f6f6b61b575a4f}{change\+Chef}} (std\+::string new\+Chef)
+\begin{DoxyCompactList}\small\item\em the current\+Chef will be changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_abf30ec43d74bb3eabf2285a856672765}{handle\+Notice}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override
+\begin{DoxyCompactList}\small\item\em Handle a received notice from the \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_acdae764c8afbb2c86933b93fe84623df}{open}} () override
+\begin{DoxyCompactList}\small\item\em open up the stall by changing the is\+Serving description to true \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_a9c95865f39502e2ab5d795c22509f8b2}{close}} () override
+\begin{DoxyCompactList}\small\item\em close up the stall by changing the is\+Serving description to false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFoodStation_ae6a77c09ae1e87531bc2e97f943f3a08}{report\+Status}} () override
+\begin{DoxyCompactList}\small\item\em a general overview of the food station \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFoodStation_acc10faf9688e8965c0ca1f12c729a77a}{get\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em get the capacity of the food station from the base station \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventUnit}{Event\+Unit}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventUnit_a8df87487f890622383c73a3e44effe6b}{Event\+Unit}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}, int \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Unit object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice) override final
+\begin{DoxyCompactList}\small\item\em Update method called by \doxylink{classSubject}{Subject}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEventComponent_a79cbbe92be1fb6e5fabe521f1d687609}{Event\+Component}} (std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}, bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}})
+\begin{DoxyCompactList}\small\item\em Construct a new Event Component object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classEventComponent_a8c34b248d3e7b52a22c72d938db4b8ed}{\texorpdfstring{$\sim$}{\string~}\+Event\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the component. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{get\+Is\+Outdoor}} ()
+\begin{DoxyCompactList}\small\item\em Check if the component is outdoors. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEventComponent_a86786497e5bf8342e2b832be85f90517}{set\+Parent}} (\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent of this component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a8d3b5a60eec089cf2da3b67ea5d8ff10}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent of this component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObserver}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classFoodStation_a30f0173daa75cfc01abc04e91bc426a7}{inventory}}
+\item 
+std\+::string \mbox{\hyperlink{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}{cuisine\+Type}}
+\item 
+bool \mbox{\hyperlink{classFoodStation_a2e3f3f6232fc7263febfc4cd90e0bc80}{is\+Serving}}
+\item 
+std\+::string \mbox{\hyperlink{classFoodStation_a4a40949cea4771bcbc983a266868a33f}{current\+Chef}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEventComponent}{Event\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}
+\item 
+bool \mbox{\hyperlink{classEventComponent_a6b490a0da407740d4f32891fa167a06e}{is\+Outdoor}}
+\item 
+\mbox{\hyperlink{classEventGroup}{Event\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEventComponent_a1681ae2745ea96f75f08a8fad8ed6554}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete Leaf -\/ Food preparation and tasting station. 
+
+Represents a food station in the bazaar that serves prepared food. Reacts to weather alerts, evacuation, and shift changes. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8h_source_l00013}{13}} of file \mbox{\hyperlink{FoodStation_8h_source}{Food\+Station.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFoodStation_a3e000fe58c2d77763d49b3d70d76d8dd}\label{classFoodStation_a3e000fe58c2d77763d49b3d70d76d8dd} 
+\index{FoodStation@{FoodStation}!FoodStation@{FoodStation}}
+\index{FoodStation@{FoodStation}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{FoodStation()}{FoodStation()}}
+{\footnotesize\ttfamily Food\+Station\+::\+Food\+Station (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{capacity,  }\item[{std\+::string}]{cuisine\+Type }\end{DoxyParamCaption})}
+
+
+
+Create foodstation object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & of the foodstation \\
+\hline
+{\em capacity} & of the foodstation \\
+\hline
+{\em cuisine\+Type} & of the foodstation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFoodStation_a4723051ece1123a827f6f6b61b575a4f}\label{classFoodStation_a4723051ece1123a827f6f6b61b575a4f} 
+\index{FoodStation@{FoodStation}!changeChef@{changeChef}}
+\index{changeChef@{changeChef}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{changeChef()}{changeChef()}}
+{\footnotesize\ttfamily void Food\+Station\+::change\+Chef (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Chef }\end{DoxyParamCaption})}
+
+
+
+the current\+Chef will be changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Chef} & to which current\+Chef is being changed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_adcfe42abb60864e8b523afc16d003883}\label{classFoodStation_adcfe42abb60864e8b523afc16d003883} 
+\index{FoodStation@{FoodStation}!checkInventory@{checkInventory}}
+\index{checkInventory@{checkInventory}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{checkInventory()}{checkInventory()}}
+{\footnotesize\ttfamily void Food\+Station\+::check\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+check that there exists something in inventory and list it\textquotesingle{}s name and amount 
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_a9c95865f39502e2ab5d795c22509f8b2}\label{classFoodStation_a9c95865f39502e2ab5d795c22509f8b2} 
+\index{FoodStation@{FoodStation}!close@{close}}
+\index{close@{close}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Food\+Station\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+close up the stall by changing the is\+Serving description to false 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a8e13a68d681c1b6affcf13435a09adab}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_acc10faf9688e8965c0ca1f12c729a77a}\label{classFoodStation_acc10faf9688e8965c0ca1f12c729a77a} 
+\index{FoodStation@{FoodStation}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Food\+Station\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+get the capacity of the food station from the base station 
+
+\begin{DoxyReturn}{Returns}
+the capacity of the food station 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_abf30ec43d74bb3eabf2285a856672765}\label{classFoodStation_abf30ec43d74bb3eabf2285a856672765} 
+\index{FoodStation@{FoodStation}!handleNotice@{handleNotice}}
+\index{handleNotice@{handleNotice}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{handleNotice()}{handleNotice()}}
+{\footnotesize\ttfamily void Food\+Station\+::handle\+Notice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle a received notice from the \doxylink{classSubject}{Subject}. 
+
+Reacts to different notice types\+:
+\begin{DoxyItemize}
+\item Open\+: Opens the station
+\item Close\+: Closes the station
+\item Weather\+Alert\+: Remains open
+\item Evacuate\+: Closes station
+\item Schedule\+Change\+: Changes chef (if "{}new\+\_\+chef"{} detail exists)
+\item Medical\+Alert\+: Closes station (if serving)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The notice to handle \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEventUnit_af8798c775cf0a533e6ae5a3798163c06}{Event\+Unit}}.
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_acdae764c8afbb2c86933b93fe84623df}\label{classFoodStation_acdae764c8afbb2c86933b93fe84623df} 
+\index{FoodStation@{FoodStation}!open@{open}}
+\index{open@{open}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Food\+Station\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+open up the stall by changing the is\+Serving description to true 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_ada5f41377769e0cbdaa7546477b3970c}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_a0270ea681f68ca2e9783a25509e4ab81}\label{classFoodStation_a0270ea681f68ca2e9783a25509e4ab81} 
+\index{FoodStation@{FoodStation}!prepareFood@{prepareFood}}
+\index{prepareFood@{prepareFood}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{prepareFood()}{prepareFood()}}
+{\footnotesize\ttfamily void Food\+Station\+::prepare\+Food (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+indicate that food is beind prepped, in context of availability of everything involved 
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_ae6a77c09ae1e87531bc2e97f943f3a08}\label{classFoodStation_ae6a77c09ae1e87531bc2e97f943f3a08} 
+\index{FoodStation@{FoodStation}!reportStatus@{reportStatus}}
+\index{reportStatus@{reportStatus}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{reportStatus()}{reportStatus()}}
+{\footnotesize\ttfamily void Food\+Station\+::report\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+a general overview of the food station 
+
+
+
+Implements \mbox{\hyperlink{classEventComponent_a6ef1d8b42932f4a9fa329e5aacb22082}{Event\+Component}}.
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+\Hypertarget{classFoodStation_a4e0e7235f4492fd02c68280271917fa3}\label{classFoodStation_a4e0e7235f4492fd02c68280271917fa3} 
+\index{FoodStation@{FoodStation}!restock@{restock}}
+\index{restock@{restock}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{restock()}{restock()}}
+{\footnotesize\ttfamily void Food\+Station\+::restock (\begin{DoxyParamCaption}\item[{std\+::string}]{item,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+will increase the amount of a certain item with a certain amount 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & who\textquotesingle{}s stock numnber will be increased \\
+\hline
+{\em amount} & with which the certain item will increase \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{FoodStation_8cpp_source}{Food\+Station.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085}\label{classFoodStation_a70d79d86e75f3ae5b2fd9d83d2c0e085} 
+\index{FoodStation@{FoodStation}!cuisineType@{cuisineType}}
+\index{cuisineType@{cuisineType}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{cuisineType}{cuisineType}}
+{\footnotesize\ttfamily std\+::string Food\+Station\+::cuisine\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8h_source_l00017}{17}} of file \mbox{\hyperlink{FoodStation_8h_source}{Food\+Station.\+h}}.
+
+\Hypertarget{classFoodStation_a4a40949cea4771bcbc983a266868a33f}\label{classFoodStation_a4a40949cea4771bcbc983a266868a33f} 
+\index{FoodStation@{FoodStation}!currentChef@{currentChef}}
+\index{currentChef@{currentChef}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{currentChef}{currentChef}}
+{\footnotesize\ttfamily std\+::string Food\+Station\+::current\+Chef\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8h_source_l00019}{19}} of file \mbox{\hyperlink{FoodStation_8h_source}{Food\+Station.\+h}}.
+
+\Hypertarget{classFoodStation_a30f0173daa75cfc01abc04e91bc426a7}\label{classFoodStation_a30f0173daa75cfc01abc04e91bc426a7} 
+\index{FoodStation@{FoodStation}!inventory@{inventory}}
+\index{inventory@{inventory}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{inventory}{inventory}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Food\+Station\+::inventory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8h_source_l00016}{16}} of file \mbox{\hyperlink{FoodStation_8h_source}{Food\+Station.\+h}}.
+
+\Hypertarget{classFoodStation_a2e3f3f6232fc7263febfc4cd90e0bc80}\label{classFoodStation_a2e3f3f6232fc7263febfc4cd90e0bc80} 
+\index{FoodStation@{FoodStation}!isServing@{isServing}}
+\index{isServing@{isServing}!FoodStation@{FoodStation}}
+\doxysubsubsection{\texorpdfstring{isServing}{isServing}}
+{\footnotesize\ttfamily bool Food\+Station\+::is\+Serving\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{FoodStation_8h_source_l00018}{18}} of file \mbox{\hyperlink{FoodStation_8h_source}{Food\+Station.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/composite/\mbox{\hyperlink{FoodStation_8h}{Food\+Station.\+h}}\item 
+src/composite/\mbox{\hyperlink{FoodStation_8cpp}{Food\+Station.\+cpp}}\end{DoxyCompactItemize}

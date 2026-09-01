@@ -1,0 +1,37 @@
+\doxysection{Subject.\+cpp}
+\hypertarget{Subject_8cpp_source}{}\label{Subject_8cpp_source}\index{src/observer/Subject.cpp@{src/observer/Subject.cpp}}
+\mbox{\hyperlink{Subject_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/observer/Subject.h"{}}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00004}\mbox{\hyperlink{classSubject_a7c4f522850f718466e5be7eb55ba1969}{00004}}\ \mbox{\hyperlink{classSubject_a7c4f522850f718466e5be7eb55ba1969}{Subject::\string~Subject}}()}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//\ empty}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00009}\mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{Subject::attach}}(\mbox{\hyperlink{classObserver}{Observer}}\ *observer)}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(\mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.begin(),\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.end(),\ observer)\ !=\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.end())}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ observer\ is\ already\ attached\ to\ this\ subject}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.push\_back(observer);}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00020}\mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{Subject::detach}}(\mbox{\hyperlink{classObserver}{Observer}}\ *observer)}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.erase(std::remove(\mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.begin(),\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.end(),\ observer),\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}}.end());}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00025}\mbox{\hyperlink{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}{Subject::notify}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classObserver}{Observer}}\ *observer\ :\ \mbox{\hyperlink{classSubject_a769f92bbb62bed4ac0be73cd2e221dcf}{attachedObservers}})}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ observer-\/>update(notice);}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Subject_8cpp_source_l00031}00031\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{Performance\+Stage.\+h}
+\hypertarget{PerformanceStage_8h_source}{}\label{PerformanceStage_8h_source}\index{include/composite/PerformanceStage.h@{include/composite/PerformanceStage.h}}
+\mbox{\hyperlink{PerformanceStage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ PERFORMANCE\_STAGE\_H}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ PERFORMANCE\_STAGE\_H}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventUnit_8h}{EventUnit.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00012}\mbox{\hyperlink{classPerformanceStage}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPerformanceStage}{PerformanceStage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEventUnit}{EventUnit}}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00014}00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00015}\mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{00015}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classPerformanceStage_aeb885fb02c2c3a0e21591d29c10a6ead}{schedule}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00016}\mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{00016}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classPerformanceStage_abecbebacbeadbf05eecc6f436d010ee1}{currentPerformance}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00017}\mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{00017}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPerformanceStage_a7bff467e6e995b5cf55fe17891d08bc6}{isPerforming}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00018}\mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{00018}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPerformanceStage_ade82f6ee1e55a804fba53c953c8a4ca7}{isOpen}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00019}\mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{00019}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classPerformanceStage_a7436b9b574afbfe7c45a948ee05be78e}{currentStageManager}};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classPerformanceStage}{PerformanceStage}}(std::string\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEventUnit_ab580fd919b4ba8f220e6e10df49d9916}{capacity}});}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a8e7d8d8e1cf3c4d1d7730dbe87446247}{startPerformance}}(std::string\ show);}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_ab1740a4b9355cd3452ec3770625d3984}{pausePerformance}}();}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a5a10b371b47b598d568ecbebf5affd05}{changeStageManager}}(std::string\ newManager);}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a01ca1634df491b7f2979052c0dbc9cad}{handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a37f924589370dcff12782031b3c440dd}{open}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_ac6f0450755f67df0363c9a6933ce6ddd}{close}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPerformanceStage_a8b1f395a010fc8a752b4f01604051fc2}{reportStatus}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPerformanceStage_a608d009635b57fc21428c49bfa91adbd}{getCapacity}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00085}00085\ \};}
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{PerformanceStage_8h_source_l00087}00087\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

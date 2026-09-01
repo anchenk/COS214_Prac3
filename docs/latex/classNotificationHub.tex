@@ -1,0 +1,147 @@
+\doxysection{Notification\+Hub Class Reference}
+\hypertarget{classNotificationHub}{}\label{classNotificationHub}\index{NotificationHub@{NotificationHub}}
+
+
+Sends out events relating to a market gathering.  
+
+
+
+
+{\ttfamily \#include $<$Notification\+Hub.\+h$>$}
+
+Inheritance diagram for Notification\+Hub\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNotificationHub}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNotificationHub_ac7640cae83a070fbdb58d28ffb672782}{Notification\+Hub}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Notification Hub object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNotificationHub_a2671671578ed7b25203e120dcc03053f}{\texorpdfstring{$\sim$}{\string~}\+Notification\+Hub}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Notification Hub object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNotificationHub_a840b11d4f6684fe42b3db6aae8d84c80}{broadcast\+To\+All}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice)
+\begin{DoxyCompactList}\small\item\em Cache an event and then send it out to every registered listener. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNotificationHub_aee97d98049a5f9fc4e0ac68437b41bd9}{get\+Last\+Notice}} ()
+\begin{DoxyCompactList}\small\item\em Gets the last event that was sent out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSubject}{Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSubject_a7c4f522850f718466e5be7eb55ba1969}{\texorpdfstring{$\sim$}{\string~}\+Subject}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a0884bfe374d352c6488a1e40c84246c8}{attach}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Add an event listener to be called whenever an event occurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a752a7596d52ab986539232f8377ca92c}{detach}} (\mbox{\hyperlink{classObserver}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Remove a registered event listener from handling future events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSubject_a589c32d012a669f6cbe03dda4ac86dbf}{notify}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice)
+\begin{DoxyCompactList}\small\item\em Send an event to all attached Observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNotificationHub_a3a408804eca865e92b8b418eaf395007}{last\+Notice}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sends out events relating to a market gathering. 
+
+Acts as a concrete subject in the observer design pattern. Sends out events relating to a market gathering so that different components of the market can handle them and update in their own ways. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{NotificationHub_8h_source_l00016}{16}} of file \mbox{\hyperlink{NotificationHub_8h_source}{Notification\+Hub.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNotificationHub_ac7640cae83a070fbdb58d28ffb672782}\label{classNotificationHub_ac7640cae83a070fbdb58d28ffb672782} 
+\index{NotificationHub@{NotificationHub}!NotificationHub@{NotificationHub}}
+\index{NotificationHub@{NotificationHub}!NotificationHub@{NotificationHub}}
+\doxysubsubsection{\texorpdfstring{NotificationHub()}{NotificationHub()}}
+{\footnotesize\ttfamily Notification\+Hub\+::\+Notification\+Hub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Notification Hub object. 
+
+Initializes with no cached notice. 
+
+Definition at line \mbox{\hyperlink{NotificationHub_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{NotificationHub_8cpp_source}{Notification\+Hub.\+cpp}}.
+
+\Hypertarget{classNotificationHub_a2671671578ed7b25203e120dcc03053f}\label{classNotificationHub_a2671671578ed7b25203e120dcc03053f} 
+\index{NotificationHub@{NotificationHub}!````~NotificationHub@{\texorpdfstring{$\sim$}{\string~}NotificationHub}}
+\index{````~NotificationHub@{\texorpdfstring{$\sim$}{\string~}NotificationHub}!NotificationHub@{NotificationHub}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NotificationHub()}{\string~NotificationHub()}}
+{\footnotesize\ttfamily Notification\+Hub\+::\texorpdfstring{$\sim$}{\string~}\+Notification\+Hub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Notification Hub object. 
+
+Deletes the cached last\+Notice if it exists. 
+
+Definition at line \mbox{\hyperlink{NotificationHub_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{NotificationHub_8cpp_source}{Notification\+Hub.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNotificationHub_a840b11d4f6684fe42b3db6aae8d84c80}\label{classNotificationHub_a840b11d4f6684fe42b3db6aae8d84c80} 
+\index{NotificationHub@{NotificationHub}!broadcastToAll@{broadcastToAll}}
+\index{broadcastToAll@{broadcastToAll}!NotificationHub@{NotificationHub}}
+\doxysubsubsection{\texorpdfstring{broadcastToAll()}{broadcastToAll()}}
+{\footnotesize\ttfamily void Notification\+Hub\+::broadcast\+To\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})}
+
+
+
+Cache an event and then send it out to every registered listener. 
+
+Notices passed into this method become owned by this \doxylink{classNotificationHub}{Notification\+Hub} and will be deleted when this instance is deleted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The event to cache and broadcast. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{NotificationHub_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{NotificationHub_8cpp_source}{Notification\+Hub.\+cpp}}.
+
+\Hypertarget{classNotificationHub_aee97d98049a5f9fc4e0ac68437b41bd9}\label{classNotificationHub_aee97d98049a5f9fc4e0ac68437b41bd9} 
+\index{NotificationHub@{NotificationHub}!getLastNotice@{getLastNotice}}
+\index{getLastNotice@{getLastNotice}!NotificationHub@{NotificationHub}}
+\doxysubsubsection{\texorpdfstring{getLastNotice()}{getLastNotice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*} Notification\+Hub\+::get\+Last\+Notice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the last event that was sent out. 
+
+\begin{DoxyReturn}{Returns}
+the last \doxylink{classNotice}{Notice} that was sent out, or nullptr if no event has been sent out since the creation of this \doxylink{classNotificationHub}{Notification\+Hub}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NotificationHub_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{NotificationHub_8cpp_source}{Notification\+Hub.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classNotificationHub_a3a408804eca865e92b8b418eaf395007}\label{classNotificationHub_a3a408804eca865e92b8b418eaf395007} 
+\index{NotificationHub@{NotificationHub}!lastNotice@{lastNotice}}
+\index{lastNotice@{lastNotice}!NotificationHub@{NotificationHub}}
+\doxysubsubsection{\texorpdfstring{lastNotice}{lastNotice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNotice}{Notice}}\texorpdfstring{$\ast$}{*} Notification\+Hub\+::last\+Notice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{NotificationHub_8h_source_l00019}{19}} of file \mbox{\hyperlink{NotificationHub_8h_source}{Notification\+Hub.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/observer/\mbox{\hyperlink{NotificationHub_8h}{Notification\+Hub.\+h}}\item 
+src/observer/\mbox{\hyperlink{NotificationHub_8cpp}{Notification\+Hub.\+cpp}}\end{DoxyCompactItemize}

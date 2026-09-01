@@ -1,0 +1,81 @@
+\doxysection{Observer Class Reference}
+\hypertarget{classObserver}{}\label{classObserver}\index{Observer@{Observer}}
+
+
+An abstract observer in the observer design pattern.  
+
+
+
+
+{\ttfamily \#include $<$Observer.\+h$>$}
+
+Inheritance diagram for Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.584000cm]{classObserver}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classObserver_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classObserver_aea0a922d1a76e0fc924e001d25925a95}{update}} (\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}notice)=0
+\begin{DoxyCompactList}\small\item\em Handle an event sent out by the \doxylink{classSubject}{Subject} this \doxylink{classObserver}{Observer} is attached to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract observer in the observer design pattern. 
+
+Handles events sent out from a \doxylink{classSubject}{Subject} that this \doxylink{classObserver}{Observer} is attached to. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{Observer_8h_source_l00016}{16}} of file \mbox{\hyperlink{Observer_8h_source}{Observer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObserver_a450645e61c136826f09940a1334c7f34}\label{classObserver_a450645e61c136826f09940a1334c7f34} 
+\index{Observer@{Observer}!````~Observer@{\texorpdfstring{$\sim$}{\string~}Observer}}
+\index{````~Observer@{\texorpdfstring{$\sim$}{\string~}Observer}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Observer()}{\string~Observer()}}
+{\footnotesize\ttfamily Observer\+::\texorpdfstring{$\sim$}{\string~}\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Required for polymorphic destruction of derived classes. 
+
+Definition at line \mbox{\hyperlink{Observer_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{Observer_8cpp_source}{Observer.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObserver_aea0a922d1a76e0fc924e001d25925a95}\label{classObserver_aea0a922d1a76e0fc924e001d25925a95} 
+\index{Observer@{Observer}!update@{update}}
+\index{update@{update}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Observer\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNotice}{Notice}} \texorpdfstring{$\ast$}{*}}]{notice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle an event sent out by the \doxylink{classSubject}{Subject} this \doxylink{classObserver}{Observer} is attached to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em notice} & The event that was sent out by the \doxylink{classSubject}{Subject}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEventGroup_aa9f464af69c5dee35d49aa4ce33d049c}{Event\+Group}}, and \mbox{\hyperlink{classEventUnit_acec0797cae4d1a1790a83190235d443f}{Event\+Unit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/observer/\mbox{\hyperlink{Observer_8h}{Observer.\+h}}\item 
+src/observer/\mbox{\hyperlink{Observer_8cpp}{Observer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\doxysection{Information\+Desk.\+cpp}
+\hypertarget{InformationDesk_8cpp_source}{}\label{InformationDesk_8cpp_source}\index{src/composite/InformationDesk.cpp@{src/composite/InformationDesk.cpp}}
+\mbox{\hyperlink{InformationDesk_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/composite/InformationDesk.h"{}}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00003}\mbox{\hyperlink{classInformationDesk_a1ff10435d8ac195e65ee2c0e229e3cf7}{00003}}\ \mbox{\hyperlink{classInformationDesk_a1ff10435d8ac195e65ee2c0e229e3cf7}{InformationDesk::InformationDesk}}(std::string\ name,\ \textcolor{keywordtype}{int}\ capacity)\ :\ \mbox{\hyperlink{classEventUnit}{EventUnit}}(name,\ false,\ capacity),\ isOpen(false),\ visitorsHelped(0)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00007}\mbox{\hyperlink{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e}{InformationDesk::addStaff}}(std::string\ staffMember)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}{staff}}.push\_back(staffMember);}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00010}00010\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Welcome\ to\ the\ team,\ "{}}\ <<\ staffMember\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00013}\mbox{\hyperlink{classInformationDesk_a5d0c31fcb4cb78bcb0246766cd3c5693}{00013}}\ std::string\ \mbox{\hyperlink{classInformationDesk_a5d0c31fcb4cb78bcb0246766cd3c5693}{InformationDesk::addLanguage}}(std::string\ newLanguage)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&lang\ :\ \mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}})}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lang\ ==\ newLanguage)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ahh\ ma\ cheri,\ we\ can\ already\ speak\ "{}}\ <<\ newLanguage\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newLanguage;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}}.push\_back(newLanguage);}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00024}00024\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Oui\ oui\ bonjour!\ Hola,\ tudo\ bem?\ Hallo\ hoe\ ganit!\ We\ can\ speak\ even\ more\ languages\ now\ like,\ "{}}\ <<\ newLanguage\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ newLanguage;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00028}\mbox{\hyperlink{classInformationDesk_ab10fe7095cc53c6f195d003b6185c646}{00028}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInformationDesk_ab10fe7095cc53c6f195d003b6185c646}{InformationDesk::getIsOpen}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}{isOpen}};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00033}\mbox{\hyperlink{classInformationDesk_a8ebf118601f9c19bff9cecf8a2be266e}{00033}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classInformationDesk_a8ebf118601f9c19bff9cecf8a2be266e}{InformationDesk::getVisitorsHelped}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classInformationDesk_ae7b2a38d765089edbb43e5eb0e7bf667}{visitorsHelped}};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00038}\mbox{\hyperlink{classInformationDesk_a5f0dc4720a71de38e4939b8134382ecb}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInformationDesk_a5f0dc4720a71de38e4939b8134382ecb}{InformationDesk::handleNotice}}(\mbox{\hyperlink{classNotice}{Notice}}\ *notice)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (!notice)}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ switch\ severity}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_af460ddf9f969aa60f3b0100be5af80db}{getSeverity}}())}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba4059b0251f66a18cb56f544728796875}{Severity::Info}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Informational\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Severity::Warning}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Warning\ message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Severity_8h_a11717da96dc4e4a5f79371318448f82ba278d01e5af56273bae1bb99a98b370cd}{Severity::Critical}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Critical\ Message:\ "{}};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ switch\ type}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{switch}\ (notice-\/>\mbox{\hyperlink{classNotice_a7a05c62929c0d946e9cd205b595cbdc3}{getType}}())}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274}{NoticeType::Open}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}{open}}();}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418}{NoticeType::Close}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{close}}();}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308}{NoticeType::Evacuate}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}EVERYBODY\ THIS\ WAY!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ is\ assisting\ with\ evacuation"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{close}}();}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5}{NoticeType::WeatherAlert}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}NOBODY\ GO\ OUTSIDE!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ REMAINS\ OPEN\ -\/\ providing\ weather\ safety\ info"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee}{NoticeType::ScheduleChange}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (notice-\/>\mbox{\hyperlink{classNotice_a15ee07a57e1d6ecdddb14b1edd29df01}{hasDetail}}(\textcolor{stringliteral}{"{}new\_desk\_staff"{}}))}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ac03c0a01f41ed6ddd66f278a5cd2933e}{addStaff}}(notice-\/>\mbox{\hyperlink{classNotice_afa626ad50d0ed7e74e4011671f6f93d9}{getDetail}}(\textcolor{stringliteral}{"{}new\_desk\_staff"{}}));}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4}{NoticeType::MedicalAlert}}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ REMAINS\ OPEN\ -\/\ directing\ visitors\ away\ from\ medical\ incident"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ received\ unknown\ notice:\ "{}}\ <<\ notice-\/>\mbox{\hyperlink{classNotice_a535ec24c6347d3b92c98a1131b52d6be}{getMessage}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00088}00088\ \textcolor{comment}{//\ event\ component}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00089}\mbox{\hyperlink{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}{00089}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInformationDesk_a05045ad9063e074ecca50715c3dd833d}{InformationDesk::open}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}{isOpen}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00092}00092\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Need\ some\ info?\ Come\ on\ here,\ we\ got\ it\ all!\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}\ is\ open!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00095}\mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInformationDesk_ad9c600ce413f4be6963616daa7090fc4}{InformationDesk::close}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}{isOpen}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00098}00098\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Unfortunately\ we\ have\ run\ out\ of\ information\ at\ the\ moment...\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_a82348aef118d5b35e0962a4f632cbd19}{name}}\ <<\ \textcolor{stringliteral}{"{}is\ closed"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00101}\mbox{\hyperlink{classInformationDesk_aa5650143860010912113065941518ffc}{00101}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInformationDesk_aa5650143860010912113065941518ffc}{InformationDesk::reportStatus}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00103}00103\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ \mbox{\hyperlink{classEventComponent_aaaae01a33c718caaa0a3143f28ee5811}{getName}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00104}00104\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Capacity:\ "{}}\ <<\ \mbox{\hyperlink{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}{getCapacity}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00105}00105\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Is\ Open:\ "{}}\ <<\ (\mbox{\hyperlink{classInformationDesk_ad35e13f194a3b64d031119c4ab0e0a4d}{isOpen}}\ ?\ \textcolor{stringliteral}{"{}Yes"{}}\ :\ \textcolor{stringliteral}{"{}No"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00106}00106\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visitors\ Helped:\ "{}}\ <<\ \mbox{\hyperlink{classInformationDesk_ae7b2a38d765089edbb43e5eb0e7bf667}{visitorsHelped}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00107}00107\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Staff\ Members:\ "{}}\ <<\ \mbox{\hyperlink{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}{staff}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}{staff}}.empty())}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00110}00110\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Staff:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&member\ :\ \mbox{\hyperlink{classInformationDesk_ae191dbea4f3723a43d8adad3d0a9c99d}{staff}})}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ -\/\ "{}}\ <<\ member\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00118}00118\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Languages\ Offered:\ "{}}\ <<\ \mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}}.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}}.empty())}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Languages:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&lang\ :\ \mbox{\hyperlink{classInformationDesk_abdf56a4e7c257f4af0d3c9aa7fdb6abe}{languages}})}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ -\/\ "{}}\ <<\ lang\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00128}00128\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}}\ <<\ (\mbox{\hyperlink{classEventComponent_abc26ea9ca68b1d90caeb6ed50fa7c625}{getIsOutdoor}}()\ ?\ \textcolor{stringliteral}{"{}Outdoor"{}}\ :\ \textcolor{stringliteral}{"{}Indoor"{}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00131}\mbox{\hyperlink{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}{00131}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classInformationDesk_ade67e1ffd419355eac4b3429f2d40564}{InformationDesk::getCapacity}}()}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEventUnit_a8e07a953ddb16403ce60d2158754f90d}{EventUnit::getCapacity}}();}
+\DoxyCodeLine{\Hypertarget{InformationDesk_8cpp_source_l00134}00134\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\doxysection{include/enums/\+Notice\+Type.h File Reference}
+\hypertarget{NoticeType_8h}{}\label{NoticeType_8h}\index{include/enums/NoticeType.h@{include/enums/NoticeType.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}{Notice\+Type}} \{ \newline
+\mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274}{Open}}
+, \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418}{Close}}
+, \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308}{Evacuate}}
+, \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee}{Schedule\+Change}}
+, \newline
+\mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4}{Medical\+Alert}}
+, \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5}{Weather\+Alert}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of event notices that can be broadcast through the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570} 
+\index{NoticeType.h@{NoticeType.h}!NoticeType@{NoticeType}}
+\index{NoticeType@{NoticeType}!NoticeType.h@{NoticeType.h}}
+\doxysubsubsection{\texorpdfstring{NoticeType}{NoticeType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570}{Notice\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Types of event notices that can be broadcast through the system. 
+
+Each notice type triggers different behaviors in observers. Observers use switch statements on this enum to determine their reactions. \begin{DoxyAuthor}{Author}
+Caleb Jennings -\/ u25173805, Anchen Kruger -\/ u25073703, Chloe Larsen -\/ u25004141 
+\end{DoxyAuthor}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Open@{Open}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!Open@{Open}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ac3bf447eabe632720a3aa1a7ce401274} 
+Open&Open a facility or area. Causes observers to open/activate. Severity\+: Info Used by\+: All Event\+Components \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Close@{Close}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!Close@{Close}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570ad3d2e617335f08df83599665eef8a418} 
+Close&Close a facility or area. Causes observers to close/deactivate. Severity\+: Warning Used by\+: All Event\+Components \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Evacuate@{Evacuate}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!Evacuate@{Evacuate}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a019816b0be2f2bca7bc470c0e12f3308} 
+Evacuate&Evacuate the area immediately. Triggers emergency evacuation procedures. Severity\+: Critical Used by\+: All Event\+Components \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScheduleChange@{ScheduleChange}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!ScheduleChange@{ScheduleChange}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a83873d4741f1edce91df1e4ec3137dee} 
+Schedule\+Change&Schedule or staff change notification. Used for shift changes, staff rotations, and schedule updates. Can carry additional details like "{}new\+\_\+staff"{}, "{}new\+\_\+chef"{}, "{}new\+\_\+manager"{}, or "{}new\+\_\+language"{}. Severity\+: Info Used by\+: All leaves (\doxylink{classVendorBooth}{Vendor\+Booth}, \doxylink{classFoodStation}{Food\+Station}, \doxylink{classPerformanceStage}{Performance\+Stage}, etc.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MedicalAlert@{MedicalAlert}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!MedicalAlert@{MedicalAlert}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570abcd1defdb0f325cb5bc1eed8d3e8e7e4} 
+Medical\+Alert&Medical emergency alert. Triggers medical response from \doxylink{classFirstAidPoint}{First\+Aid\+Point} and alerts other units. Carries details\+: "{}condition"{} and "{}location"{}. Severity\+: Info, Warning, or Critical Used by\+: \doxylink{classFirstAidPoint}{First\+Aid\+Point} (primary), all other units (secondary) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WeatherAlert@{WeatherAlert}!NoticeType.h@{NoticeType.h}}\index{NoticeType.h@{NoticeType.h}!WeatherAlert@{WeatherAlert}}}\Hypertarget{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5}\label{NoticeType_8h_af363a9693a3fb910ac7c54199a89c570a825d7914c653db01c2e93c06d0014ae5} 
+Weather\+Alert&Weather warning or alert. Triggers weather-\/related responses (closing outdoor areas, pausing shows). Severity\+: Warning Used by\+: Outdoor Event\+Components \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{NoticeType_8h_source_l00011}{11}} of file \mbox{\hyperlink{NoticeType_8h_source}{Notice\+Type.\+h}}.
+
