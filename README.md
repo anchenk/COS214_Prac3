@@ -2,7 +2,7 @@
 
 ## Event Concept
 
-**COS214 Lentedag** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
+**The Heap & Heap Artisanal Bazaar** is an event management system designed to organize and manage various components of a large-scale music festival. The system uses the **Composite Design Pattern** to create a hierarchical structure of event components, allowing for unified management of both individual elements and groups.
 
 ### Key Features
 - **Composite Pattern**: Hierarchical organization of event components
