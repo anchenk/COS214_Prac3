@@ -5,6 +5,9 @@ TARGET   := eventflow
 ZIP_NAME := submission.zip
 FLAT_DIR := flat_src
 
+# Extra root files and directories (escape spaces with backslashes)
+ROOT_FILES := README.md Doxyfile visualParadigm resources/COS214\ -\ Practical\ 3.pdf
+
 # Find main.cpp and all src/ cpp files
 SRCS     := $(shell find src -type f -name '*.cpp')
 
@@ -26,29 +29,36 @@ $(BUILD_DIR)/%.o: src/%.cpp
 run: $(TARGET)
 	./$(TARGET)
 
-# Zip Makefile, main.cpp, src/, include/, and flatten all files from resources into the root of the zip
+# Zip Makefile, source trees, and explicitly add all ROOT_FILES without extension filtering
 zip:
-	zip -r $(ZIP_NAME) Makefile main.cpp src include -i '*.cpp' '*.h' '*.hpp'
-	zip -u $(ZIP_NAME) Makefile
+	zip -r $(ZIP_NAME) Makefile $(ROOT_FILES) src include -i '*.cpp' '*.h' '*.hpp'
+	zip -u -r $(ZIP_NAME) Makefile $(ROOT_FILES)
 	if [ -d resources ]; then zip -j $(ZIP_NAME) resources/*; fi
 
-# Generate flat files with auto-patched includes, copy resources and Makefile, zip them, and remove temp folder
+# Generate flat zip: handle individual files and directories separately with cp -r
 flat-zip:
 	@rm -rf $(FLAT_DIR) $(ZIP_NAME)
 	@mkdir -p $(FLAT_DIR)
-	@# 1. Copy Makefile, source/header files, and resources into the flat temporary directory
 	@cp Makefile $(FLAT_DIR)/
+	@# Copy files or flatten directory contents listed in ROOT_FILES
+	@for item in $(ROOT_FILES); do \
+		if [ -d "$$item" ]; then \
+			cp -r "$$item"/* $(FLAT_DIR)/ 2>/dev/null || true; \
+		elif [ -f "$$item" ]; then \
+			cp "$$item" $(FLAT_DIR)/; \
+		fi; \
+	done
+	@# Copy C++ sources/headers, excluding build and temp dirs
 	@find . -type f \( -name '*.cpp' -o -name '*.h' -o -name '*.hpp' \) ! -path "./$(BUILD_DIR)/*" ! -path "./$(FLAT_DIR)/*" -exec cp {} $(FLAT_DIR)/ \;
 	@if [ -d resources ]; then cp -r resources/* $(FLAT_DIR)/ 2>/dev/null || true; fi
-	@# 2. Update #include "path/to/file.h" to #include "file.h" using sed
+	@# Patch include directives
 	@for f in $(FLAT_DIR)/*; do \
 		[ -f "$$f" ] && sed -i -E 's/#include "([^"]*\/)?([^"\/]+)"/#include "\2"/g' "$$f"; \
 	done
-	@# 3. Zip all flat files and clean up temporary directory
 	cd $(FLAT_DIR) && zip -j ../$(ZIP_NAME) *
 	@rm -rf $(FLAT_DIR)
 
-# Clean up build directory, root .o files, executable, flat directory, and zip file
+# Clean build output
 clean:
 	rm -rf $(BUILD_DIR) $(TARGET) *.o $(ZIP_NAME) $(FLAT_DIR)
 
